@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>91424880060-o31ug30rovar2qjessgkik4tvi1nkqap.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.91424880060-o31ug30rovar2qjessgkik4tvi1nkqap</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>91424880060-7p234juajhdu307ipa74jkmralk1b7l1.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD-QdFanKxLseQp-8xXqXqwSzFhKGNQSew</string>
+	<key>GCM_SENDER_ID</key>
+	<string>91424880060</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.mycompany.campuscare</string>
+	<key>PROJECT_ID</key>
+	<string>campus-care-izsd1a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>campus-care-izsd1a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:91424880060:ios:317649b2c7045783e2e7b9</string>
+</dict>
+</plist>
