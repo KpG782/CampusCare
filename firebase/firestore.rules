@@ -37,7 +37,7 @@ service cloud.firestore {
     match /emoji/{document} {
       allow create: if true;
       allow read: if true;
-      allow write: if false;
+      allow write: if true;
       allow delete: if false;
     }
 
@@ -58,14 +58,14 @@ service cloud.firestore {
     match /appFeedbacks/{document} {
       allow create: if true;
       allow read: if true;
-      allow write: if false;
-      allow delete: if false;
+      allow write: if true;
+      allow delete: if true;
     }
 
     match /mood_summary/{document} {
       allow create: if true;
       allow read: if true;
-      allow write: if false;
+      allow write: if true;
       allow delete: if false;
     }
 
@@ -88,6 +88,39 @@ service cloud.firestore {
       allow read: if true;
       allow write: if true;
       allow delete: if false;
+    }
+
+    match /mood_choices/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /activityImages/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /quoteGenerator/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /news/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /ff_user_push_notifications/{id} {
+      allow read, update, delete: if false;
+      allow create: if /databases/$(database)/documents/users/$(request.auth.uid) == request.resource.data.sender;
     }
   }
 }

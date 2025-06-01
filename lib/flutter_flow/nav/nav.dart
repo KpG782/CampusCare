@@ -7,6 +7,8 @@ import '/backend/schema/structs/index.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
+import '/backend/push_notifications/push_notifications_handler.dart'
+    show PushNotificationsHandler;
 import '/main.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
@@ -151,9 +153,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 ),
         ),
         FFRoute(
-          name: MentalResourceListWidget.routeName,
-          path: MentalResourceListWidget.routePath,
-          builder: (context, params) => MentalResourceListWidget(),
+          name: MentalResourceListStep1Widget.routeName,
+          path: MentalResourceListStep1Widget.routePath,
+          builder: (context, params) => MentalResourceListStep1Widget(),
         ),
         FFRoute(
           name: AcademicSuccessPageWidget.routeName,
@@ -385,24 +387,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => Suicidal1Widget(),
         ),
         FFRoute(
-          name: Trauma1Widget.routeName,
-          path: Trauma1Widget.routePath,
-          builder: (context, params) => Trauma1Widget(),
+          name: GrowthMindset1Widget.routeName,
+          path: GrowthMindset1Widget.routePath,
+          builder: (context, params) => GrowthMindset1Widget(),
         ),
         FFRoute(
           name: CheckVerificationPageWidget.routeName,
           path: CheckVerificationPageWidget.routePath,
           builder: (context, params) => CheckVerificationPageWidget(),
-        ),
-        FFRoute(
-          name: MoodTrackerWidget.routeName,
-          path: MoodTrackerWidget.routePath,
-          builder: (context, params) => MoodTrackerWidget(
-            date: params.getParam(
-              'date',
-              ParamType.DateTime,
-            ),
-          ),
         ),
         FFRoute(
           name: MoodLogsWidget.routeName,
@@ -478,9 +470,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: MentalResourceListCopyWidget.routeName,
-          path: MentalResourceListCopyWidget.routePath,
-          builder: (context, params) => MentalResourceListCopyWidget(),
+          name: MentalResourceListztryWidget.routeName,
+          path: MentalResourceListztryWidget.routePath,
+          builder: (context, params) => MentalResourceListztryWidget(),
         ),
         FFRoute(
           name: FavouritesPageCopyWidget.routeName,
@@ -509,9 +501,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: VillanuevaWidget.routeName,
-          path: VillanuevaWidget.routePath,
-          builder: (context, params) => VillanuevaWidget(),
+          name: Discoverry1Widget.routeName,
+          path: Discoverry1Widget.routePath,
+          builder: (context, params) => Discoverry1Widget(
+            adminRef: params.getParam(
+              'adminRef',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['users'],
+            ),
+          ),
         ),
         FFRoute(
           name: RoxasWidget.routeName,
@@ -524,9 +523,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => CaguioaWidget(),
         ),
         FFRoute(
-          name: AcademicSuccessPageCopyWidget.routeName,
-          path: AcademicSuccessPageCopyWidget.routePath,
-          builder: (context, params) => AcademicSuccessPageCopyWidget(),
+          name: MentalResourceWidget.routeName,
+          path: MentalResourceWidget.routePath,
+          builder: (context, params) => MentalResourceWidget(),
         ),
         FFRoute(
           name: AcademicContent1CopyWidget.routeName,
@@ -537,11 +536,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: SeminarWidget.routeName,
           path: SeminarWidget.routePath,
           builder: (context, params) => SeminarWidget(),
-        ),
-        FFRoute(
-          name: MessagePageCopyWidget.routeName,
-          path: MessagePageCopyWidget.routePath,
-          builder: (context, params) => MessagePageCopyWidget(),
         ),
         FFRoute(
           name: AccountPageCopyWidget.routeName,
@@ -689,14 +683,165 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => BreatheWorriedWidget(),
         ),
         FFRoute(
-          name: MoodLogsCopyCopyWidget.routeName,
-          path: MoodLogsCopyCopyWidget.routePath,
-          builder: (context, params) => MoodLogsCopyCopyWidget(),
-        ),
-        FFRoute(
           name: MyProfilePageCopyWidget.routeName,
           path: MyProfilePageCopyWidget.routePath,
           builder: (context, params) => MyProfilePageCopyWidget(),
+        ),
+        FFRoute(
+          name: GrowthMindsetPageWidget.routeName,
+          path: GrowthMindsetPageWidget.routePath,
+          builder: (context, params) => GrowthMindsetPageWidget(),
+        ),
+        FFRoute(
+          name: Trauma1Widget.routeName,
+          path: Trauma1Widget.routePath,
+          builder: (context, params) => Trauma1Widget(),
+        ),
+        FFRoute(
+          name: GrowthMindset2Widget.routeName,
+          path: GrowthMindset2Widget.routePath,
+          builder: (context, params) => GrowthMindset2Widget(),
+        ),
+        FFRoute(
+          name: MotivationPageWidget.routeName,
+          path: MotivationPageWidget.routePath,
+          builder: (context, params) => MotivationPageWidget(),
+        ),
+        FFRoute(
+          name: Motivation1Widget.routeName,
+          path: Motivation1Widget.routePath,
+          builder: (context, params) => Motivation1Widget(),
+        ),
+        FFRoute(
+          name: Motivation2Widget.routeName,
+          path: Motivation2Widget.routePath,
+          builder: (context, params) => Motivation2Widget(),
+        ),
+        FFRoute(
+          name: Motivation3Widget.routeName,
+          path: Motivation3Widget.routePath,
+          builder: (context, params) => Motivation3Widget(),
+        ),
+        FFRoute(
+          name: Motivation4Widget.routeName,
+          path: Motivation4Widget.routePath,
+          builder: (context, params) => Motivation4Widget(),
+        ),
+        FFRoute(
+          name: PositivePsychologyPageWidget.routeName,
+          path: PositivePsychologyPageWidget.routePath,
+          builder: (context, params) => PositivePsychologyPageWidget(),
+        ),
+        FFRoute(
+          name: PositivePsychology1Widget.routeName,
+          path: PositivePsychology1Widget.routePath,
+          builder: (context, params) => PositivePsychology1Widget(),
+        ),
+        FFRoute(
+          name: Confidence1Widget.routeName,
+          path: Confidence1Widget.routePath,
+          builder: (context, params) => Confidence1Widget(),
+        ),
+        FFRoute(
+          name: ConfidencePageWidget.routeName,
+          path: ConfidencePageWidget.routePath,
+          builder: (context, params) => ConfidencePageWidget(),
+        ),
+        FFRoute(
+          name: MoodTracker1NewActivityWidget.routeName,
+          path: MoodTracker1NewActivityWidget.routePath,
+          builder: (context, params) => MoodTracker1NewActivityWidget(
+            date: params.getParam(
+              'date',
+              ParamType.DateTime,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: MoodTracker2NewActivityWidget.routeName,
+          path: MoodTracker2NewActivityWidget.routePath,
+          builder: (context, params) => MoodTracker2NewActivityWidget(
+            date: params.getParam(
+              'date',
+              ParamType.DateTime,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: MoodWidget.routeName,
+          path: MoodWidget.routePath,
+          builder: (context, params) => MoodWidget(),
+        ),
+        FFRoute(
+          name: MoodTracker3NewActivityWidget.routeName,
+          path: MoodTracker3NewActivityWidget.routePath,
+          builder: (context, params) => MoodTracker3NewActivityWidget(),
+        ),
+        FFRoute(
+          name: BreatheEnergizeWidget.routeName,
+          path: BreatheEnergizeWidget.routePath,
+          builder: (context, params) => BreatheEnergizeWidget(),
+        ),
+        FFRoute(
+          name: BreatheDeeprelaxWidget.routeName,
+          path: BreatheDeeprelaxWidget.routePath,
+          builder: (context, params) => BreatheDeeprelaxWidget(),
+        ),
+        FFRoute(
+          name: BreathCalmWidget.routeName,
+          path: BreathCalmWidget.routePath,
+          builder: (context, params) => BreathCalmWidget(),
+        ),
+        FFRoute(
+          name: BreatheJoyWidget.routeName,
+          path: BreatheJoyWidget.routePath,
+          builder: (context, params) => BreatheJoyWidget(),
+        ),
+        FFRoute(
+          name: NewsWidget.routeName,
+          path: NewsWidget.routePath,
+          builder: (context, params) => NewsWidget(
+            index: params.getParam(
+              'index',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['news'],
+            ),
+            titleIndex: params.getParam(
+              'titleIndex',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: MentalResourceListzWidget.routeName,
+          path: MentalResourceListzWidget.routePath,
+          builder: (context, params) => MentalResourceListzWidget(),
+        ),
+        FFRoute(
+          name: MentalResourceListStep2Widget.routeName,
+          path: MentalResourceListStep2Widget.routePath,
+          builder: (context, params) => MentalResourceListStep2Widget(
+            title: params.getParam(
+              'title',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: MentalResourceListStep3Widget.routeName,
+          path: MentalResourceListStep3Widget.routePath,
+          builder: (context, params) => MentalResourceListStep3Widget(
+            postTitle: params.getParam(
+              'postTitle',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: MoodSummaryCopyWidget.routeName,
+          path: MoodSummaryCopyWidget.routePath,
+          builder: (context, params) => MoodSummaryCopyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
@@ -891,7 +1036,7 @@ class FFRoute {
                     fit: BoxFit.none,
                   ),
                 )
-              : page;
+              : PushNotificationsHandler(child: page);
 
           final transitionInfo = state.transitionInfo;
           return transitionInfo.hasTransition

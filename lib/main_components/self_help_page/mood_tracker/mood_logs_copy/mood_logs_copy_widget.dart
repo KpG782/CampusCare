@@ -1,12 +1,13 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/components/log_component_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/main_components/mood_component/mood_component_widget.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'mood_logs_copy_model.dart';
 export 'mood_logs_copy_model.dart';
 
@@ -91,8 +92,21 @@ class _MoodLogsCopyWidgetState extends State<MoodLogsCopyWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
                                 .override(
-                                  fontFamily: 'Inter Tight',
+                                  font: GoogleFonts.interTight(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .titleLarge
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .titleLarge
+                                      .fontStyle,
                                 ),
                           ),
                         ),
@@ -137,7 +151,7 @@ class _MoodLogsCopyWidgetState extends State<MoodLogsCopyWidget> {
                       itemBuilder: (context, listViewIndex) {
                         final listViewMoodLogRecord =
                             listViewMoodLogRecordList[listViewIndex];
-                        return LogComponentWidget(
+                        return MoodComponentWidget(
                           key: Key(
                               'Key28i_${listViewIndex}_of_${listViewMoodLogRecordList.length}'),
                           parameter1: listViewMoodLogRecord.emojis,

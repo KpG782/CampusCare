@@ -8,10 +8,13 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'create_account1_page_model.dart';
 export 'create_account1_page_model.dart';
 
@@ -104,10 +107,23 @@ class _CreateAccount1PageWidgetState extends State<CreateAccount1PageWidget> {
                           style: FlutterFlowTheme.of(context)
                               .displaySmall
                               .override(
-                                fontFamily: 'Inter Tight',
+                                font: GoogleFonts.interTight(
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .displaySmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .displaySmall
+                                      .fontStyle,
+                                ),
                                 color: FlutterFlowTheme.of(context).text1,
                                 fontSize: 28.0,
                                 letterSpacing: 0.0,
+                                fontWeight: FlutterFlowTheme.of(context)
+                                    .displaySmall
+                                    .fontWeight,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .displaySmall
+                                    .fontStyle,
                               ),
                         ),
                       ),
@@ -139,8 +155,8 @@ class _CreateAccount1PageWidgetState extends State<CreateAccount1PageWidget> {
                                     selectedMedia.every((m) =>
                                         validateFileFormat(
                                             m.storagePath, context))) {
-                                  safeSetState(
-                                      () => _model.isDataUploading = true);
+                                  safeSetState(() => _model
+                                      .isDataUploading_uploadData1mc = true);
                                   var selectedUploadedFiles =
                                       <FFUploadedFile>[];
 
@@ -174,16 +190,17 @@ class _CreateAccount1PageWidgetState extends State<CreateAccount1PageWidget> {
                                   } finally {
                                     ScaffoldMessenger.of(context)
                                         .hideCurrentSnackBar();
-                                    _model.isDataUploading = false;
+                                    _model.isDataUploading_uploadData1mc =
+                                        false;
                                   }
                                   if (selectedUploadedFiles.length ==
                                           selectedMedia.length &&
                                       downloadUrls.length ==
                                           selectedMedia.length) {
                                     safeSetState(() {
-                                      _model.uploadedLocalFile =
+                                      _model.uploadedLocalFile_uploadData1mc =
                                           selectedUploadedFiles.first;
-                                      _model.uploadedFileUrl =
+                                      _model.uploadedFileUrl_uploadData1mc =
                                           downloadUrls.first;
                                     });
                                     showUploadMessage(context, 'Success!');
@@ -197,7 +214,8 @@ class _CreateAccount1PageWidgetState extends State<CreateAccount1PageWidget> {
 
                                 await currentUserReference!
                                     .update(createUsersRecordData(
-                                  photoUrl: _model.uploadedFileUrl,
+                                  photoUrl:
+                                      _model.uploadedFileUrl_uploadData1mc,
                                 ));
                               },
                               child: Container(
@@ -223,7 +241,8 @@ class _CreateAccount1PageWidgetState extends State<CreateAccount1PageWidget> {
                                               Duration(milliseconds: 500),
                                           fadeOutDuration:
                                               Duration(milliseconds: 500),
-                                          imageUrl: _model.uploadedFileUrl,
+                                          imageUrl: _model
+                                              .uploadedFileUrl_uploadData1mc,
                                           fit: BoxFit.fitWidth,
                                         ),
                                       ),
@@ -269,27 +288,61 @@ class _CreateAccount1PageWidgetState extends State<CreateAccount1PageWidget> {
                             labelStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Inter',
+                                  font: GoogleFonts.inter(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
+                                  ),
                                   color: FlutterFlowTheme.of(context).text2,
                                   fontSize: 16.0,
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontStyle,
                                 ),
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Inter',
+                                  font: GoogleFonts.inter(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
+                                  ),
                                   color: FlutterFlowTheme.of(context).text2,
                                   fontSize: 16.0,
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontStyle,
                                 ),
                             counterStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Inter',
+                                  font: GoogleFonts.inter(
+                                    fontWeight: FontWeight.w300,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
                                   color: FlutterFlowTheme.of(context).text2,
                                   fontSize: 12.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w300,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
                                 ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
@@ -327,15 +380,39 @@ class _CreateAccount1PageWidgetState extends State<CreateAccount1PageWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
                                     color: FlutterFlowTheme.of(context).text3,
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
                                   ),
                           maxLength: 20,
                           maxLengthEnforcement: MaxLengthEnforcement.enforced,
                           validator: _model.txtUserNameTextControllerValidator
                               .asValidator(context),
+                          inputFormatters: [
+                            if (!isAndroid && !isiOS)
+                              TextInputFormatter.withFunction(
+                                  (oldValue, newValue) {
+                                return TextEditingValue(
+                                  selection: newValue.selection,
+                                  text: newValue.text.toCapitalization(
+                                      TextCapitalization.words),
+                                );
+                              }),
+                          ],
                         ),
                       ),
                       Padding(
@@ -371,15 +448,41 @@ class _CreateAccount1PageWidgetState extends State<CreateAccount1PageWidget> {
                           height: 56.0,
                           searchTextStyle:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
                                   ),
                           textStyle:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
                                     color: FlutterFlowTheme.of(context).text2,
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
                                   ),
                           hintText: 'Select Academics',
                           icon: Icon(
@@ -411,25 +514,59 @@ class _CreateAccount1PageWidgetState extends State<CreateAccount1PageWidget> {
                             labelStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Inter',
+                                  font: GoogleFonts.inter(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
+                                  ),
                                   color: FlutterFlowTheme.of(context).text2,
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontStyle,
                                 ),
                             hintText: 'Your bio',
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Inter',
+                                  font: GoogleFonts.inter(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontStyle,
                                 ),
                             counterStyle: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Inter',
+                                  font: GoogleFonts.inter(
+                                    fontWeight: FontWeight.normal,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
                                   color: FlutterFlowTheme.of(context).text1,
                                   fontSize: 16.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.normal,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
                                 ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
@@ -467,9 +604,22 @@ class _CreateAccount1PageWidgetState extends State<CreateAccount1PageWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
                                     color: FlutterFlowTheme.of(context).text3,
                                     letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
                                   ),
                           textAlign: TextAlign.start,
                           maxLines: 3,
@@ -477,6 +627,17 @@ class _CreateAccount1PageWidgetState extends State<CreateAccount1PageWidget> {
                           maxLengthEnforcement: MaxLengthEnforcement.enforced,
                           validator: _model.txtUserBioTextControllerValidator
                               .asValidator(context),
+                          inputFormatters: [
+                            if (!isAndroid && !isiOS)
+                              TextInputFormatter.withFunction(
+                                  (oldValue, newValue) {
+                                return TextEditingValue(
+                                  selection: newValue.selection,
+                                  text: newValue.text.toCapitalization(
+                                      TextCapitalization.sentences),
+                                );
+                              }),
+                          ],
                         ),
                       ),
                       Align(
@@ -484,47 +645,124 @@ class _CreateAccount1PageWidgetState extends State<CreateAccount1PageWidget> {
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 48.0, 0.0, 0.0),
-                          child: FFButtonWidget(
-                            onPressed: () async {
-                              await currentUserReference!
-                                  .update(createUsersRecordData(
-                                userName: _model.txtUserNameTextController.text,
-                                userDept: _model.txtUserDeptValue,
-                                userBio: _model.txtUserBioTextController.text,
-                              ));
-
-                              context.pushNamed(
-                                OnboardingPage1Widget.routeName,
-                                extra: <String, dynamic>{
-                                  kTransitionInfoKey: TransitionInfo(
-                                    hasTransition: true,
-                                    transitionType: PageTransitionType.fade,
-                                  ),
-                                },
-                              );
-                            },
-                            text: 'Save Changes',
-                            options: FFButtonOptions(
-                              width: 320.0,
-                              height: 60.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context).text2,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleMedium
-                                  .override(
-                                    fontFamily: 'Inter Tight',
-                                    color: FlutterFlowTheme.of(context).text4,
-                                    fontSize: 16.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                              borderSide: BorderSide(
-                                color: Colors.transparent,
+                          child: AuthUserStreamWidget(
+                            builder: (context) =>
+                                StreamBuilder<List<UsersRecord>>(
+                              stream: queryUsersRecord(
+                                queryBuilder: (usersRecord) =>
+                                    usersRecord.where(
+                                  'adminDept',
+                                  arrayContains: valueOrDefault(
+                                      currentUserDocument?.userDept, ''),
+                                ),
+                                singleRecord: true,
                               ),
-                              borderRadius: BorderRadius.circular(20.0),
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: SpinKitChasingDots(
+                                        color: Color(0xFF19C5C5),
+                                        size: 50.0,
+                                      ),
+                                    ),
+                                  );
+                                }
+                                List<UsersRecord> buttonUsersRecordList =
+                                    snapshot.data!;
+                                // Return an empty Container when the item does not exist.
+                                if (snapshot.data!.isEmpty) {
+                                  return Container();
+                                }
+                                final buttonUsersRecord =
+                                    buttonUsersRecordList.isNotEmpty
+                                        ? buttonUsersRecordList.first
+                                        : null;
+
+                                return FFButtonWidget(
+                                  onPressed: () async {
+                                    await currentUserReference!
+                                        .update(createUsersRecordData(
+                                      userName:
+                                          _model.txtUserNameTextController.text,
+                                      userDept: _model.txtUserDeptValue,
+                                      userBio:
+                                          _model.txtUserBioTextController.text,
+                                    ));
+
+                                    await ChatsRecord.collection.doc().set({
+                                      ...createChatsRecordData(
+                                        lastMessage: 'Say hello!',
+                                        timeStamp:
+                                            buttonUsersRecord?.createdTime,
+                                      ),
+                                      ...mapToFirestore(
+                                        {
+                                          'userNames':
+                                              functions.generateListOfNames(
+                                                  valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.userName,
+                                                      ''),
+                                                  buttonUsersRecord!.userName),
+                                          'userids':
+                                              functions.generateNewListofUsers(
+                                                  currentUserReference!,
+                                                  buttonUsersRecord.reference),
+                                        },
+                                      ),
+                                    });
+
+                                    context.pushNamed(
+                                      OnboardingPage1Widget.routeName,
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                        ),
+                                      },
+                                    );
+                                  },
+                                  text: 'Save Changes',
+                                  options: FFButtonOptions(
+                                    width: 320.0,
+                                    height: 60.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context).text2,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                          font: GoogleFonts.interTight(
+                                            fontWeight: FontWeight.bold,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleMedium
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .text4,
+                                          fontSize: 16.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.bold,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleMedium
+                                                  .fontStyle,
+                                        ),
+                                    borderSide: BorderSide(
+                                      color: Colors.transparent,
+                                    ),
+                                    borderRadius: BorderRadius.circular(20.0),
+                                  ),
+                                );
+                              },
                             ),
                           ),
                         ),

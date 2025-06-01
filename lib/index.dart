@@ -17,19 +17,19 @@ export '/main_components/discovery_page/discovery_page/discovery_page_widget.dar
     show DiscoveryPageWidget;
 export '/main_components/homepage/homepage/homepage_widget.dart'
     show HomepageWidget;
-export '/main_components/self_help_page/self_help_page/self_help_page_widget.dart'
+export '/main_components/self_help_page/self_help_page_widget.dart'
     show SelfHelpPageWidget;
-export '/main_components/mental_resource_list/mental_resource_list_widget.dart'
-    show MentalResourceListWidget;
+export '/main_components/mental_resource_list_step1/mental_resource_list_step1_widget.dart'
+    show MentalResourceListStep1Widget;
 export '/main_components/self_help_page/resources/academic_success/academic_success_page/academic_success_page_widget.dart'
     show AcademicSuccessPageWidget;
 export '/main_components/self_help_page/resources/academic_success/academic_content_2/academic_content2_widget.dart'
     show AcademicContent2Widget;
 export '/main_components/self_help_page/resources/anxiety/anxiety_page/anxiety_page_widget.dart'
     show AnxietyPageWidget;
-export '/main_components/self_help_page/resources/anxiety/contents/anxiety1/anxiety1_widget.dart'
+export '/main_components/self_help_page/resources/anxiety/anxiety1/anxiety1_widget.dart'
     show Anxiety1Widget;
-export '/main_components/self_help_page/resources/anxiety/contents/anxiety2/anxiety2_widget.dart'
+export '/main_components/self_help_page/resources/anxiety/anxiety2/anxiety2_widget.dart'
     show Anxiety2Widget;
 export '/main_components/self_help_page/resources/depression/depression_page/depression_page_widget.dart'
     show DepressionPageWidget;
@@ -106,14 +106,11 @@ export '/main_components/self_help_page/resources/substance/substance2/substance
     show Substance2Widget;
 export '/main_components/self_help_page/resources/suicidal/suicidal1/suicidal1_widget.dart'
     show Suicidal1Widget;
-export '/main_components/self_help_page/resources/trauma/trauma1/trauma1_widget.dart'
-    show Trauma1Widget;
+export '/main_components/self_help_page/resources/growth_mindset/growth_mindset1/growth_mindset1_widget.dart'
+    show GrowthMindset1Widget;
 export '/login/check_verification_page/check_verification_page_widget.dart'
     show CheckVerificationPageWidget;
-export '/main_components/self_help_page/mood_tracker/mood_tracker_widget.dart'
-    show MoodTrackerWidget;
-export '/main_components/self_help_page/mood_tracker/mood_logs/mood_logs_widget.dart'
-    show MoodLogsWidget;
+export '/main_components/mood_logs/mood_logs_widget.dart' show MoodLogsWidget;
 export '/user_profile/accounts/session_feedbacks/session_page/session_page_widget.dart'
     show SessionPageWidget;
 export '/main_components/reservation_page/reservation_page1/reservation_page1_widget.dart'
@@ -128,32 +125,30 @@ export '/onboarding/onboarding_page4/onboarding_page4_widget.dart'
     show OnboardingPage4Widget;
 export '/onboarding/onboarding_page5/onboarding_page5_widget.dart'
     show OnboardingPage5Widget;
-export '/main_components/self_help_page/mood_tracker/mood_summary/mood_summary_widget.dart'
+export '/main_components/mood_summary/mood_summary_widget.dart'
     show MoodSummaryWidget;
 export '/main_components/reservation_page/reservation_page3/reservation_page3_widget.dart'
     show ReservationPage3Widget;
-export '/main_components/mental_resource_list_copy/mental_resource_list_copy_widget.dart'
-    show MentalResourceListCopyWidget;
+export '/main_components/mental_resource_listztry/mental_resource_listztry_widget.dart'
+    show MentalResourceListztryWidget;
 export '/user_profile/accounts/favourites/favourites_page_copy/favourites_page_copy_widget.dart'
     show FavouritesPageCopyWidget;
 export '/main_components/self_help_page/breathing/breathe_irritation/breathe_irritation_widget.dart'
     show BreatheIrritationWidget;
 export '/main_components/reservation_page/reservation_page2/reservation_page2_widget.dart'
     show ReservationPage2Widget;
-export '/main_components/discovery_page/councilors/villanueva/villanueva_widget.dart'
-    show VillanuevaWidget;
+export '/main_components/discovery_page/councilors/discoverry1/discoverry1_widget.dart'
+    show Discoverry1Widget;
 export '/main_components/discovery_page/councilors/roxas/roxas_widget.dart'
     show RoxasWidget;
 export '/main_components/discovery_page/councilors/caguioa/caguioa_widget.dart'
     show CaguioaWidget;
-export '/main_components/academic_success_page_copy/academic_success_page_copy_widget.dart'
-    show AcademicSuccessPageCopyWidget;
+export '/main_components/mental_resource/mental_resource_widget.dart'
+    show MentalResourceWidget;
 export '/main_components/academic_content_1_copy/academic_content1_copy_widget.dart'
     show AcademicContent1CopyWidget;
 export '/main_components/homepage/updates_contents/seminar/seminar_widget.dart'
     show SeminarWidget;
-export '/main_components/message_page/message_page_copy/message_page_copy_widget.dart'
-    show MessagePageCopyWidget;
 export '/user_profile/account_page_copy/account_page_copy_widget.dart'
     show AccountPageCopyWidget;
 export '/login/b_lo_copy/b_lo_copy_widget.dart' show BLoCopyWidget;
@@ -165,7 +160,7 @@ export '/user_profile/account_page_copy2/account_page_copy2_widget.dart'
     show AccountPageCopy2Widget;
 export '/main_components/message_page/message_page_copy2/message_page_copy2_widget.dart'
     show MessagePageCopy2Widget;
-export '/main_components/self_help_page/self_help_page_emergency_copy/self_help_page_emergency_copy_widget.dart'
+export '/main_components/self_help_page_emergency_copy/self_help_page_emergency_copy_widget.dart'
     show SelfHelpPageEmergencyCopyWidget;
 export '/reservation_page_s_o_s/reservation_page1_s_o_s_copy/reservation_page1_s_o_s_copy_widget.dart'
     show ReservationPage1SOSCopyWidget;
@@ -191,7 +186,55 @@ export '/main_components/self_help_page/breathing/breathe_sad/breathe_sad_widget
     show BreatheSadWidget;
 export '/main_components/self_help_page/breathing/breathe_worried/breathe_worried_widget.dart'
     show BreatheWorriedWidget;
-export '/main_components/self_help_page/mood_tracker/mood_logs_copy_copy/mood_logs_copy_copy_widget.dart'
-    show MoodLogsCopyCopyWidget;
 export '/user_profile/accounts/my_profile/my_profile_page_copy/my_profile_page_copy_widget.dart'
     show MyProfilePageCopyWidget;
+export '/main_components/self_help_page/resources/growth_mindset/growth_mindset_page/growth_mindset_page_widget.dart'
+    show GrowthMindsetPageWidget;
+export '/main_components/self_help_page/resources/trauma/trauma1/trauma1_widget.dart'
+    show Trauma1Widget;
+export '/main_components/self_help_page/resources/growth_mindset/growth_mindset2/growth_mindset2_widget.dart'
+    show GrowthMindset2Widget;
+export '/main_components/self_help_page/resources/motivation/motivation_page/motivation_page_widget.dart'
+    show MotivationPageWidget;
+export '/main_components/self_help_page/resources/motivation/motivation1/motivation1_widget.dart'
+    show Motivation1Widget;
+export '/main_components/self_help_page/resources/motivation/motivation2/motivation2_widget.dart'
+    show Motivation2Widget;
+export '/main_components/self_help_page/resources/motivation/motivation3/motivation3_widget.dart'
+    show Motivation3Widget;
+export '/main_components/self_help_page/resources/motivation/motivation4/motivation4_widget.dart'
+    show Motivation4Widget;
+export '/main_components/self_help_page/resources/positive_pscyhology/positive_psychology_page/positive_psychology_page_widget.dart'
+    show PositivePsychologyPageWidget;
+export '/main_components/self_help_page/resources/positive_pscyhology/positive_psychology1/positive_psychology1_widget.dart'
+    show PositivePsychology1Widget;
+export '/main_components/self_help_page/resources/confidence/confidence1/confidence1_widget.dart'
+    show Confidence1Widget;
+export '/main_components/self_help_page/resources/confidence/confidence_page/confidence_page_widget.dart'
+    show ConfidencePageWidget;
+export '/main_components/self_help_page/mood_tracker1_new_activity/mood_tracker1_new_activity_widget.dart'
+    show MoodTracker1NewActivityWidget;
+export '/main_components/self_help_page/mood_tracker2_new_activity/mood_tracker2_new_activity_widget.dart'
+    show MoodTracker2NewActivityWidget;
+export '/main_components/self_help_page/mood_tracker/mood/mood_widget.dart'
+    show MoodWidget;
+export '/main_components/self_help_page/mood_tracker3_new_activity/mood_tracker3_new_activity_widget.dart'
+    show MoodTracker3NewActivityWidget;
+export '/main_components/self_help_page/breathing/breathe_energize/breathe_energize_widget.dart'
+    show BreatheEnergizeWidget;
+export '/main_components/self_help_page/breathing/breathe_deeprelax/breathe_deeprelax_widget.dart'
+    show BreatheDeeprelaxWidget;
+export '/main_components/self_help_page/breathing/breath_calm/breath_calm_widget.dart'
+    show BreathCalmWidget;
+export '/main_components/self_help_page/breathing/breathe_joy/breathe_joy_widget.dart'
+    show BreatheJoyWidget;
+export '/main_components/homepage/updates_contents/news/news_widget.dart'
+    show NewsWidget;
+export '/main_components/mental_resource_listz/mental_resource_listz_widget.dart'
+    show MentalResourceListzWidget;
+export '/main_components/mental_resource_list_step2/mental_resource_list_step2_widget.dart'
+    show MentalResourceListStep2Widget;
+export '/main_components/mental_resource_list_step3/mental_resource_list_step3_widget.dart'
+    show MentalResourceListStep3Widget;
+export '/main_components/mood_summary_copy/mood_summary_copy_widget.dart'
+    show MoodSummaryCopyWidget;

@@ -6,6 +6,7 @@ import '/index.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'b_lo_model.dart';
 export 'b_lo_model.dart';
 
@@ -38,28 +39,28 @@ class _BLoWidgetState extends State<BLoWidget> with TickerProviderStateMixin {
           FadeEffect(
             curve: Curves.easeInOut,
             delay: 300.0.ms,
-            duration: 300.0.ms,
+            duration: 900.0.ms,
             begin: 0.0,
             end: 1.0,
           ),
           MoveEffect(
             curve: Curves.easeInOut,
             delay: 300.0.ms,
-            duration: 300.0.ms,
+            duration: 900.0.ms,
             begin: Offset(0.0, 140.0),
             end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 300.0.ms,
-            duration: 300.0.ms,
+            duration: 900.0.ms,
             begin: Offset(0.9, 1.0),
             end: Offset(1.0, 1.0),
           ),
           TiltEffect(
             curve: Curves.easeInOut,
             delay: 300.0.ms,
-            duration: 300.0.ms,
+            duration: 900.0.ms,
             begin: Offset(-0.349, 0),
             end: Offset(0, 0),
           ),
@@ -224,11 +225,26 @@ class _BLoWidgetState extends State<BLoWidget> with TickerProviderStateMixin {
                                   style: FlutterFlowTheme.of(context)
                                       .displaySmall
                                       .override(
-                                        fontFamily: 'Inter Tight',
+                                        font: GoogleFonts.interTight(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .displaySmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .displaySmall
+                                                  .fontStyle,
+                                        ),
                                         color:
                                             FlutterFlowTheme.of(context).text1,
                                         fontSize: 28.0,
                                         letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .displaySmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .displaySmall
+                                            .fontStyle,
                                       ),
                                 ),
                                 Padding(
@@ -240,10 +256,27 @@ class _BLoWidgetState extends State<BLoWidget> with TickerProviderStateMixin {
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
                                         .override(
-                                          fontFamily: 'Inter',
+                                          font: GoogleFonts.inter(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelLarge
+                                                    .fontStyle,
+                                          ),
                                           color: FlutterFlowTheme.of(context)
                                               .text1,
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelLarge
+                                                  .fontStyle,
                                         ),
                                   ),
                                 ),
@@ -266,7 +299,6 @@ class _BLoWidgetState extends State<BLoWidget> with TickerProviderStateMixin {
                                     text: 'Login with your Account',
                                     icon: Icon(
                                       Icons.mail,
-                                      color: Color(0xFF19C5C5),
                                       size: 30.0,
                                     ),
                                     options: FFButtonOptions(
@@ -277,15 +309,26 @@ class _BLoWidgetState extends State<BLoWidget> with TickerProviderStateMixin {
                                       iconPadding:
                                           EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
+                                      iconColor: Color(0xFF19C5C5),
                                       color: FlutterFlowTheme.of(context).text4,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Inter Tight',
+                                            font: GoogleFonts.interTight(
+                                              fontWeight: FontWeight.bold,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .fontStyle,
+                                            ),
                                             color: FlutterFlowTheme.of(context)
                                                 .text3,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontStyle,
                                           ),
                                       elevation: 0.0,
                                       borderSide: BorderSide(
@@ -332,10 +375,20 @@ class _BLoWidgetState extends State<BLoWidget> with TickerProviderStateMixin {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Inter Tight',
+                                            font: GoogleFonts.interTight(
+                                              fontWeight: FontWeight.bold,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .fontStyle,
+                                            ),
                                             color: Colors.white,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontStyle,
                                           ),
                                       elevation: 0.0,
                                       borderSide: BorderSide(
@@ -422,10 +475,27 @@ class _BLoWidgetState extends State<BLoWidget> with TickerProviderStateMixin {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Inter',
+                                            font: GoogleFonts.inter(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
                                           ),
                                     ),
                                     textAlign: TextAlign.center,

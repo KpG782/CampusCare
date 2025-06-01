@@ -19,6 +19,20 @@
       ]
     },
     {
+      "collectionGroup": "mood_log",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "UserId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "date",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
       "collectionGroup": "chats",
       "queryScope": "COLLECTION",
       "fields": [
@@ -57,6 +71,32 @@
         {
           "fieldPath": "adminDept",
           "arrayConfig": "CONTAINS"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "MentalResources",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "mental_favorite",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "mental_ID",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": [
+    {
+      "collectionGroup": "fcm_tokens",
+      "fieldPath": "fcm_token",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
         }
       ]
     }

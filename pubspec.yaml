@@ -37,10 +37,14 @@ dependencies:
   cloud_firestore: 5.5.0
   cloud_firestore_platform_interface: 6.5.0
   cloud_firestore_web: 4.3.4
+  cloud_functions: 5.1.5
+  cloud_functions_platform_interface: 5.5.39
+  cloud_functions_web: 4.10.4
   collection: 1.19.0
   csslib: 0.17.3
   dropdown_button2: 2.3.9
   easy_debounce: 2.0.1
+  equatable: 2.0.5
   file_picker: 8.1.2
   firebase_auth: 5.3.3
   firebase_auth_platform_interface: 7.4.9
@@ -48,6 +52,9 @@ dependencies:
   firebase_core: 3.8.0
   firebase_core_platform_interface: 5.3.0
   firebase_core_web: 2.18.1
+  firebase_messaging: 15.1.5
+  firebase_messaging_platform_interface: 4.5.48
+  firebase_messaging_web: 3.9.4
   firebase_performance: 0.10.0+10
   firebase_performance_platform_interface: 0.1.4+46
   firebase_performance_web: 0.1.7+4
@@ -70,6 +77,7 @@ dependencies:
   google_sign_in_platform_interface: 2.4.5
   google_sign_in_web: 0.12.4+2
   html: 0.15.4
+  http: 1.2.2
   image_picker: 1.1.2
   image_picker_android: 0.8.12+13
   image_picker_for_web: 3.0.5
@@ -112,6 +120,7 @@ dependencies:
   styled_divider: 1.0.4
   table_calendar: 3.1.1
   timeago: 3.6.1
+  timezone: 0.9.2
   url_launcher: 6.3.0
   url_launcher_android: 6.3.10
   url_launcher_ios: 6.3.1
@@ -126,6 +135,8 @@ dependencies:
   video_player_avfoundation: 2.6.2
   video_player_platform_interface: 6.2.3
   video_player_web: 2.3.2
+  wakelock_plus: 1.2.8
+  wakelock_plus_platform_interface: 1.2.1
   webview_flutter: 4.9.0
   webview_flutter_android: 3.16.7
   webview_flutter_platform_interface: 2.10.0

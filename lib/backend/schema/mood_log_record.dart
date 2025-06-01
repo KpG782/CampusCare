@@ -45,6 +45,26 @@ class MoodLogRecord extends FirestoreRecord {
   int get moodID => _moodID ?? 0;
   bool hasMoodID() => _moodID != null;
 
+  // "activities" field.
+  List<String>? _activities;
+  List<String> get activities => _activities ?? const [];
+  bool hasActivities() => _activities != null;
+
+  // "mood_score" field.
+  double? _moodScore;
+  double get moodScore => _moodScore ?? 0.0;
+  bool hasMoodScore() => _moodScore != null;
+
+  // "mood_label" field.
+  String? _moodLabel;
+  String get moodLabel => _moodLabel ?? '';
+  bool hasMoodLabel() => _moodLabel != null;
+
+  // "userEmail" field.
+  String? _userEmail;
+  String get userEmail => _userEmail ?? '';
+  bool hasUserEmail() => _userEmail != null;
+
   void _initializeFields() {
     _logs = snapshotData['logs'] as String?;
     _date = snapshotData['date'] as DateTime?;
@@ -52,6 +72,10 @@ class MoodLogRecord extends FirestoreRecord {
     _emojiName = snapshotData['emoji_name'] as String?;
     _userId = snapshotData['UserId'] as String?;
     _moodID = castToType<int>(snapshotData['mood_ID']);
+    _activities = getDataList(snapshotData['activities']);
+    _moodScore = castToType<double>(snapshotData['mood_score']);
+    _moodLabel = snapshotData['mood_label'] as String?;
+    _userEmail = snapshotData['userEmail'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -95,6 +119,9 @@ Map<String, dynamic> createMoodLogRecordData({
   String? emojiName,
   String? userId,
   int? moodID,
+  double? moodScore,
+  String? moodLabel,
+  String? userEmail,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -104,6 +131,9 @@ Map<String, dynamic> createMoodLogRecordData({
       'emoji_name': emojiName,
       'UserId': userId,
       'mood_ID': moodID,
+      'mood_score': moodScore,
+      'mood_label': moodLabel,
+      'userEmail': userEmail,
     }.withoutNulls,
   );
 
@@ -115,17 +145,32 @@ class MoodLogRecordDocumentEquality implements Equality<MoodLogRecord> {
 
   @override
   bool equals(MoodLogRecord? e1, MoodLogRecord? e2) {
+    const listEquality = ListEquality();
     return e1?.logs == e2?.logs &&
         e1?.date == e2?.date &&
         e1?.emojis == e2?.emojis &&
         e1?.emojiName == e2?.emojiName &&
         e1?.userId == e2?.userId &&
-        e1?.moodID == e2?.moodID;
+        e1?.moodID == e2?.moodID &&
+        listEquality.equals(e1?.activities, e2?.activities) &&
+        e1?.moodScore == e2?.moodScore &&
+        e1?.moodLabel == e2?.moodLabel &&
+        e1?.userEmail == e2?.userEmail;
   }
 
   @override
-  int hash(MoodLogRecord? e) => const ListEquality()
-      .hash([e?.logs, e?.date, e?.emojis, e?.emojiName, e?.userId, e?.moodID]);
+  int hash(MoodLogRecord? e) => const ListEquality().hash([
+        e?.logs,
+        e?.date,
+        e?.emojis,
+        e?.emojiName,
+        e?.userId,
+        e?.moodID,
+        e?.activities,
+        e?.moodScore,
+        e?.moodLabel,
+        e?.userEmail
+      ]);
 
   @override
   bool isValidKey(Object? o) => o is MoodLogRecord;

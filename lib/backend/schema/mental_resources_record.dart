@@ -40,12 +40,18 @@ class MentalResourcesRecord extends FirestoreRecord {
   bool get mentalFavorite => _mentalFavorite ?? false;
   bool hasMentalFavorite() => _mentalFavorite != null;
 
+  // "mental_page_description" field.
+  String? _mentalPageDescription;
+  String get mentalPageDescription => _mentalPageDescription ?? '';
+  bool hasMentalPageDescription() => _mentalPageDescription != null;
+
   void _initializeFields() {
     _mentalImage = snapshotData['mental_image'] as String?;
     _mentalTitle = snapshotData['mental_title'] as String?;
     _mentalDescription = snapshotData['mental_description'] as String?;
     _mentalID = castToType<int>(snapshotData['mental_ID']);
     _mentalFavorite = snapshotData['mental_favorite'] as bool?;
+    _mentalPageDescription = snapshotData['mental_page_description'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -88,6 +94,7 @@ Map<String, dynamic> createMentalResourcesRecordData({
   String? mentalDescription,
   int? mentalID,
   bool? mentalFavorite,
+  String? mentalPageDescription,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -96,6 +103,7 @@ Map<String, dynamic> createMentalResourcesRecordData({
       'mental_description': mentalDescription,
       'mental_ID': mentalID,
       'mental_favorite': mentalFavorite,
+      'mental_page_description': mentalPageDescription,
     }.withoutNulls,
   );
 
@@ -112,7 +120,8 @@ class MentalResourcesRecordDocumentEquality
         e1?.mentalTitle == e2?.mentalTitle &&
         e1?.mentalDescription == e2?.mentalDescription &&
         e1?.mentalID == e2?.mentalID &&
-        e1?.mentalFavorite == e2?.mentalFavorite;
+        e1?.mentalFavorite == e2?.mentalFavorite &&
+        e1?.mentalPageDescription == e2?.mentalPageDescription;
   }
 
   @override
@@ -121,7 +130,8 @@ class MentalResourcesRecordDocumentEquality
         e?.mentalTitle,
         e?.mentalDescription,
         e?.mentalID,
-        e?.mentalFavorite
+        e?.mentalFavorite,
+        e?.mentalPageDescription
       ]);
 
   @override

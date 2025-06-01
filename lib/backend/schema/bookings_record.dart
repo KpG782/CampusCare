@@ -110,6 +110,11 @@ class BookingsRecord extends FirestoreRecord {
   String get uid => _uid ?? '';
   bool hasUid() => _uid != null;
 
+  // "transferredTo" field.
+  String? _transferredTo;
+  String get transferredTo => _transferredTo ?? '';
+  bool hasTransferredTo() => _transferredTo != null;
+
   void _initializeFields() {
     _attendeeRef = snapshotData['attendeeRef'] as DocumentReference?;
     _classRef = snapshotData['classRef'] as DocumentReference?;
@@ -130,6 +135,7 @@ class BookingsRecord extends FirestoreRecord {
     _adminPhoto = snapshotData['adminPhoto'] as String?;
     _councilorNotes = snapshotData['councilorNotes'] as String?;
     _uid = snapshotData['uid'] as String?;
+    _transferredTo = snapshotData['transferredTo'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -186,6 +192,7 @@ Map<String, dynamic> createBookingsRecordData({
   String? adminPhoto,
   String? councilorNotes,
   String? uid,
+  String? transferredTo,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -208,6 +215,7 @@ Map<String, dynamic> createBookingsRecordData({
       'adminPhoto': adminPhoto,
       'councilorNotes': councilorNotes,
       'uid': uid,
+      'transferredTo': transferredTo,
     }.withoutNulls,
   );
 
@@ -237,7 +245,8 @@ class BookingsRecordDocumentEquality implements Equality<BookingsRecord> {
         e1?.endTime == e2?.endTime &&
         e1?.adminPhoto == e2?.adminPhoto &&
         e1?.councilorNotes == e2?.councilorNotes &&
-        e1?.uid == e2?.uid;
+        e1?.uid == e2?.uid &&
+        e1?.transferredTo == e2?.transferredTo;
   }
 
   @override
@@ -260,7 +269,8 @@ class BookingsRecordDocumentEquality implements Equality<BookingsRecord> {
         e?.endTime,
         e?.adminPhoto,
         e?.councilorNotes,
-        e?.uid
+        e?.uid,
+        e?.transferredTo
       ]);
 
   @override

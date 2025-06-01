@@ -41,12 +41,18 @@ class ChatsRecord extends FirestoreRecord {
   List<DocumentReference> get userids => _userids ?? const [];
   bool hasUserids() => _userids != null;
 
+  // "userEmail" field.
+  String? _userEmail;
+  String get userEmail => _userEmail ?? '';
+  bool hasUserEmail() => _userEmail != null;
+
   void _initializeFields() {
     _lastMessage = snapshotData['lastMessage'] as String?;
     _userNames = getDataList(snapshotData['userNames']);
     _timeStamp = snapshotData['timeStamp'] as DateTime?;
     _lastMessageSeenBy = getDataList(snapshotData['lastMessageSeenBy']);
     _userids = getDataList(snapshotData['userids']);
+    _userEmail = snapshotData['userEmail'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -85,11 +91,13 @@ class ChatsRecord extends FirestoreRecord {
 Map<String, dynamic> createChatsRecordData({
   String? lastMessage,
   DateTime? timeStamp,
+  String? userEmail,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'lastMessage': lastMessage,
       'timeStamp': timeStamp,
+      'userEmail': userEmail,
     }.withoutNulls,
   );
 
@@ -106,7 +114,8 @@ class ChatsRecordDocumentEquality implements Equality<ChatsRecord> {
         listEquality.equals(e1?.userNames, e2?.userNames) &&
         e1?.timeStamp == e2?.timeStamp &&
         listEquality.equals(e1?.lastMessageSeenBy, e2?.lastMessageSeenBy) &&
-        listEquality.equals(e1?.userids, e2?.userids);
+        listEquality.equals(e1?.userids, e2?.userids) &&
+        e1?.userEmail == e2?.userEmail;
   }
 
   @override
@@ -115,7 +124,8 @@ class ChatsRecordDocumentEquality implements Equality<ChatsRecord> {
         e?.userNames,
         e?.timeStamp,
         e?.lastMessageSeenBy,
-        e?.userids
+        e?.userids,
+        e?.userEmail
       ]);
 
   @override

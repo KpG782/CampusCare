@@ -1,8 +1,12 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'updates_page_model.dart';
 export 'updates_page_model.dart';
 
@@ -109,353 +113,205 @@ class _UpdatesPageWidgetState extends State<UpdatesPageWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 20.0, 0.0),
                             child: Text(
-                              'Updates and More',
+                              'News & Updates',
                               style: FlutterFlowTheme.of(context)
                                   .headlineMedium
                                   .override(
-                                    fontFamily: 'Inter Tight',
+                                    font: GoogleFonts.interTight(
+                                      fontWeight: FontWeight.bold,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .headlineMedium
+                                          .fontStyle,
+                                    ),
                                     color: FlutterFlowTheme.of(context).text1,
                                     fontSize: 24.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .headlineMedium
+                                        .fontStyle,
                                   ),
                             ),
                           ),
                         ].divide(SizedBox(width: 10.0)),
                       ),
                     ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(24.0, 32.0, 24.0, 0.0),
-                      child: ListView(
-                        padding: EdgeInsets.zero,
-                        reverse: true,
-                        shrinkWrap: true,
-                        scrollDirection: Axis.vertical,
-                        children: [
-                          Container(
-                            width: 346.0,
-                            height: 134.0,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context).background2,
-                              boxShadow: [
-                                BoxShadow(
-                                  blurRadius: 10.0,
-                                  color: FlutterFlowTheme.of(context).shadow,
-                                  offset: Offset(
-                                    0.0,
-                                    0.0,
-                                  ),
-                                )
-                              ],
-                              borderRadius: BorderRadius.circular(24.0),
+                    Expanded(
+                      child: Align(
+                        alignment: AlignmentDirectional(0.0, -1.0),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              24.0, 32.0, 24.0, 0.0),
+                          child: StreamBuilder<List<NewsRecord>>(
+                            stream: queryNewsRecord(
+                              queryBuilder: (newsRecord) =>
+                                  newsRecord.orderBy('id', descending: true),
                             ),
-                            child: InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                context.pushNamed(SeminarWidget.routeName);
-                              },
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(22.0),
-                                    child: Image.asset(
-                                      'assets/images/image-2.png',
-                                      width: 126.0,
-                                      height: 88.0,
-                                      fit: BoxFit.fill,
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 50.0,
+                                    height: 50.0,
+                                    child: SpinKitChasingDots(
+                                      color: Color(0xFF19C5C5),
+                                      size: 50.0,
                                     ),
                                   ),
-                                  Expanded(
-                                    child: Padding(
-                                      padding: EdgeInsets.all(10.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 5.0),
-                                            child: Text(
-                                              'Seminar-Workshop on Suicide Prevention Held at iAcademy in Makati City',
-                                              textAlign: TextAlign.start,
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Inter',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .text1,
-                                                    fontSize: 14.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                            ),
+                                );
+                              }
+                              List<NewsRecord> listViewNewsRecordList =
+                                  snapshot.data!;
+
+                              return ListView.separated(
+                                padding: EdgeInsets.symmetric(vertical: 12.0),
+                                reverse: true,
+                                shrinkWrap: true,
+                                scrollDirection: Axis.vertical,
+                                itemCount: listViewNewsRecordList.length,
+                                separatorBuilder: (_, __) =>
+                                    SizedBox(height: 12.0),
+                                itemBuilder: (context, listViewIndex) {
+                                  final listViewNewsRecord =
+                                      listViewNewsRecordList[listViewIndex];
+                                  return InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed(
+                                        NewsWidget.routeName,
+                                        queryParameters: {
+                                          'index': serializeParam(
+                                            listViewNewsRecord.reference,
+                                            ParamType.DocumentReference,
                                           ),
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(1.0, 1.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 40.0, 10.0, 0.0),
-                                              child: InkWell(
-                                                splashColor: Colors.transparent,
-                                                focusColor: Colors.transparent,
-                                                hoverColor: Colors.transparent,
-                                                highlightColor:
-                                                    Colors.transparent,
-                                                onTap: () async {
-                                                  context.pushNamed(
-                                                      SeminarWidget.routeName);
-                                                },
-                                                child: Text(
-                                                  'More',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .text2,
-                                                        fontSize: 12.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w300,
-                                                      ),
-                                                ),
+                                          'titleIndex': serializeParam(
+                                            listViewNewsRecord.newsTitle,
+                                            ParamType.String,
+                                          ),
+                                        }.withoutNulls,
+                                      );
+                                    },
+                                    child: Container(
+                                      width: double.infinity,
+                                      height: 120.0,
+                                      constraints: BoxConstraints(
+                                        maxHeight: 360.0,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .background2,
+                                        boxShadow: [
+                                          BoxShadow(
+                                            blurRadius: 10.0,
+                                            color: FlutterFlowTheme.of(context)
+                                                .shadow,
+                                            offset: Offset(
+                                              0.0,
+                                              0.0,
+                                            ),
+                                          )
+                                        ],
+                                        borderRadius:
+                                            BorderRadius.circular(24.0),
+                                      ),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.stretch,
+                                        children: [
+                                          Expanded(
+                                            flex: 1,
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(22.0),
+                                              child: Image.network(
+                                                listViewNewsRecord.image,
+                                                width: double.infinity,
+                                                height: double.infinity,
+                                                fit: BoxFit.fill,
                                               ),
                                             ),
                                           ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Container(
-                            width: 346.0,
-                            height: 134.0,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context).background2,
-                              boxShadow: [
-                                BoxShadow(
-                                  blurRadius: 10.0,
-                                  color: FlutterFlowTheme.of(context).shadow,
-                                  offset: Offset(
-                                    0.0,
-                                    0.0,
-                                  ),
-                                )
-                              ],
-                              borderRadius: BorderRadius.circular(24.0),
-                            ),
-                            child: InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                context.pushNamed(
-                                    AcademicSuccessPageWidget.routeName);
-                              },
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(22.0),
-                                    child: Image.asset(
-                                      'assets/images/image-4.png',
-                                      width: 126.0,
-                                      height: 88.0,
-                                      fit: BoxFit.fill,
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Padding(
-                                      padding: EdgeInsets.all(10.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 5.0),
-                                            child: Text(
-                                              'UMak CITE Hosts “MOMENTS and Finishing Touches” Event Celebrating Pre-Service Teacher Interns',
-                                              textAlign: TextAlign.start,
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Inter',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .text1,
-                                                    fontSize: 14.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                            ),
-                                          ),
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(1.0, 1.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 20.0, 10.0, 0.0),
-                                              child: Text(
-                                                'More',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          color: FlutterFlowTheme
+                                          Expanded(
+                                            flex: 2,
+                                            child: Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, -1.0),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Expanded(
+                                                    child: Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              -1.0, -1.0),
+                                                      child: Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    4.0,
+                                                                    4.0,
+                                                                    4.0,
+                                                                    4.0),
+                                                        child: AutoSizeText(
+                                                          listViewNewsRecord
+                                                              .newsTitle,
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          minFontSize: 10.0,
+                                                          style: FlutterFlowTheme
                                                                   .of(context)
-                                                              .text2,
-                                                          fontSize: 12.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w300,
+                                                              .bodyMedium
+                                                              .override(
+                                                                font:
+                                                                    GoogleFonts
+                                                                        .inter(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .text1,
+                                                                fontSize: 16.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
                                                         ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Container(
-                            width: 346.0,
-                            height: 134.0,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context).background2,
-                              boxShadow: [
-                                BoxShadow(
-                                  blurRadius: 10.0,
-                                  color: FlutterFlowTheme.of(context).shadow,
-                                  offset: Offset(0.0, 0.0),
-                                )
-                              ],
-                              borderRadius: BorderRadius.circular(24.0),
-                            ),
-                            child: InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                context.pushNamed(PeerWidget.routeName);
-                              },
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(22.0),
-                                    child: Image.asset(
-                                      'assets/images/news.png',
-                                      width: 126.0,
-                                      height: 88.0,
-                                      fit: BoxFit.fill,
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Padding(
-                                      padding: EdgeInsets.all(10.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            'Peer Facilitators Association Concludes Successful Academic Year with Culminating Activity at University of Makati',
-                                            textAlign: TextAlign.start,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Inter',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .text1,
-                                                  fontSize: 14.0,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                          ),
-                                          Align(
-                                            alignment:
-                                                AlignmentDirectional(1.0, 1.0),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 10.0, 10.0, 0.0),
-                                              child: InkWell(
-                                                splashColor: Colors.transparent,
-                                                focusColor: Colors.transparent,
-                                                hoverColor: Colors.transparent,
-                                                highlightColor:
-                                                    Colors.transparent,
-                                                onTap: () async {
-                                                  context.pushNamed(
-                                                      PeerWidget.routeName);
-                                                },
-                                                child: Text(
-                                                  'More',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .text2,
-                                                        fontSize: 12.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w300,
                                                       ),
-                                                ),
+                                                    ),
+                                                  ),
+                                                ].divide(
+                                                    SizedBox(height: 12.0)),
                                               ),
                                             ),
                                           ),
                                         ],
                                       ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                            ),
+                                  );
+                                },
+                              );
+                            },
                           ),
-                        ].divide(SizedBox(height: 16.0)),
+                        ),
                       ),
                     ),
                   ],

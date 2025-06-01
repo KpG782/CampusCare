@@ -80,6 +80,21 @@ class UsersRecord extends FirestoreRecord {
   DocumentReference? get classRef => _classRef;
   bool hasClassRef() => _classRef != null;
 
+  // "userTimezone" field.
+  String? _userTimezone;
+  String get userTimezone => _userTimezone ?? '';
+  bool hasUserTimezone() => _userTimezone != null;
+
+  // "adminRole" field.
+  String? _adminRole;
+  String get adminRole => _adminRole ?? '';
+  bool hasAdminRole() => _adminRole != null;
+
+  // "adminAchievements" field.
+  String? _adminAchievements;
+  String get adminAchievements => _adminAchievements ?? '';
+  bool hasAdminAchievements() => _adminAchievements != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -94,6 +109,9 @@ class UsersRecord extends FirestoreRecord {
     _adminDept = getDataList(snapshotData['adminDept']);
     _role = snapshotData['role'] as String?;
     _classRef = snapshotData['classRef'] as DocumentReference?;
+    _userTimezone = snapshotData['userTimezone'] as String?;
+    _adminRole = snapshotData['adminRole'] as String?;
+    _adminAchievements = snapshotData['adminAchievements'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -142,6 +160,9 @@ Map<String, dynamic> createUsersRecordData({
   String? notes,
   String? role,
   DocumentReference? classRef,
+  String? userTimezone,
+  String? adminRole,
+  String? adminAchievements,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -157,6 +178,9 @@ Map<String, dynamic> createUsersRecordData({
       'notes': notes,
       'role': role,
       'classRef': classRef,
+      'userTimezone': userTimezone,
+      'adminRole': adminRole,
+      'adminAchievements': adminAchievements,
     }.withoutNulls,
   );
 
@@ -181,7 +205,10 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.notes == e2?.notes &&
         listEquality.equals(e1?.adminDept, e2?.adminDept) &&
         e1?.role == e2?.role &&
-        e1?.classRef == e2?.classRef;
+        e1?.classRef == e2?.classRef &&
+        e1?.userTimezone == e2?.userTimezone &&
+        e1?.adminRole == e2?.adminRole &&
+        e1?.adminAchievements == e2?.adminAchievements;
   }
 
   @override
@@ -198,7 +225,10 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.notes,
         e?.adminDept,
         e?.role,
-        e?.classRef
+        e?.classRef,
+        e?.userTimezone,
+        e?.adminRole,
+        e?.adminAchievements
       ]);
 
   @override

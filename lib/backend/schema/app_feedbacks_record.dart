@@ -40,12 +40,30 @@ class AppFeedbacksRecord extends FirestoreRecord {
   DateTime? get timeStamp => _timeStamp;
   bool hasTimeStamp() => _timeStamp != null;
 
+  // "userDept" field.
+  String? _userDept;
+  String get userDept => _userDept ?? '';
+  bool hasUserDept() => _userDept != null;
+
+  // "userEmail" field.
+  String? _userEmail;
+  String get userEmail => _userEmail ?? '';
+  bool hasUserEmail() => _userEmail != null;
+
+  // "uID" field.
+  String? _uID;
+  String get uID => _uID ?? '';
+  bool hasUID() => _uID != null;
+
   void _initializeFields() {
     _userID = snapshotData['userID'] as DocumentReference?;
     _starRating = castToType<int>(snapshotData['starRating']);
     _radioButton = snapshotData['radioButton'] as String?;
     _textBox = snapshotData['textBox'] as String?;
     _timeStamp = snapshotData['timeStamp'] as DateTime?;
+    _userDept = snapshotData['userDept'] as String?;
+    _userEmail = snapshotData['userEmail'] as String?;
+    _uID = snapshotData['uID'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -88,6 +106,9 @@ Map<String, dynamic> createAppFeedbacksRecordData({
   String? radioButton,
   String? textBox,
   DateTime? timeStamp,
+  String? userDept,
+  String? userEmail,
+  String? uID,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -96,6 +117,9 @@ Map<String, dynamic> createAppFeedbacksRecordData({
       'radioButton': radioButton,
       'textBox': textBox,
       'timeStamp': timeStamp,
+      'userDept': userDept,
+      'userEmail': userEmail,
+      'uID': uID,
     }.withoutNulls,
   );
 
@@ -112,12 +136,23 @@ class AppFeedbacksRecordDocumentEquality
         e1?.starRating == e2?.starRating &&
         e1?.radioButton == e2?.radioButton &&
         e1?.textBox == e2?.textBox &&
-        e1?.timeStamp == e2?.timeStamp;
+        e1?.timeStamp == e2?.timeStamp &&
+        e1?.userDept == e2?.userDept &&
+        e1?.userEmail == e2?.userEmail &&
+        e1?.uID == e2?.uID;
   }
 
   @override
-  int hash(AppFeedbacksRecord? e) => const ListEquality().hash(
-      [e?.userID, e?.starRating, e?.radioButton, e?.textBox, e?.timeStamp]);
+  int hash(AppFeedbacksRecord? e) => const ListEquality().hash([
+        e?.userID,
+        e?.starRating,
+        e?.radioButton,
+        e?.textBox,
+        e?.timeStamp,
+        e?.userDept,
+        e?.userEmail,
+        e?.uID
+      ]);
 
   @override
   bool isValidKey(Object? o) => o is AppFeedbacksRecord;

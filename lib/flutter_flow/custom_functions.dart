@@ -142,7 +142,7 @@ DateTime addTwoHours(DateTime startTime) {
     startTime.year,
     startTime.month,
     startTime.day,
-    startTime.hour + 2,
+    startTime.hour + 1,
     startTime.minute,
     startTime.second,
     startTime.millisecond,
@@ -191,4 +191,161 @@ String? convertToUid(DocumentReference? bookRef) {
   } else {
     return null;
   }
+}
+
+String? convertToText(dynamic json) {
+  if (json == null) return null;
+
+  if (json is String) {
+    return json; // Already a string, return as is
+  } else if (json is Map<String, dynamic>) {
+    return json.toString(); // Convert Map to string representation
+  } else if (json is List) {
+    return json
+        .map((e) => e.toString())
+        .join(", "); // Convert list elements to string
+  } else {
+    return json.toString(); // Convert other types to string
+  }
+}
+
+String? getRandomQuoteCopy() {
+  // List of quote categories.
+  List<String> categories = [
+    "Confidence",
+    "Motivation",
+    "Mindfulness",
+    "Gratitude",
+    "Resilience"
+  ];
+
+  // Create a random instance and shuffle the list for randomness.
+  final random = math.Random();
+  categories.shuffle(random);
+
+  String? selectedCategory;
+
+  // Loop through the shuffled list.
+  for (var category in categories) {
+    // If the category starts with 'M', skip this iteration.
+    if (category.startsWith('M')) {
+      continue;
+    }
+    // Select the first category that doesn't start with 'M'
+    selectedCategory = category;
+    // Break out of the loop once a valid category is chosen.
+    break;
+  }
+
+  // Fallback: if no valid category was found in the loop, return a random category.
+  return selectedCategory ?? categories[random.nextInt(categories.length)];
+}
+
+String? getRandomQuote() {
+  // List of categories
+  List<String> categories = [
+    "Confidence",
+    "Motivation",
+    "Mindfulness",
+    "Gratitude",
+    "Resilience"
+  ];
+
+  // Select a random category
+  final random = math.Random();
+  return categories[random.nextInt(categories.length)];
+}
+
+int? calculateReview(int? ratings) {
+  List<int> ratings = [5, 4, 3, 5, 4];
+  int total = 0;
+
+  for (int i = 0; i < ratings.length; i++) {
+    total += ratings[i];
+  }
+  return total;
+}
+
+DateTime? getStartOfMonth() {
+  final date = DateTime.now();
+  return DateTime(date.year, date.month, 1);
+}
+
+DateTime? getStartOfNextMonth() {
+  final date = DateTime.now();
+  if (date.month == 12) {
+    return DateTime(date.year + 1, 1, 1);
+  } else {
+    return DateTime(date.year, date.month + 1, 1);
+  }
+}
+
+DateTime? getSevenDaysAgo() {
+  DateTime? getSevenDaysAgo() {
+    final now = DateTime.now();
+    return now.subtract(const Duration(days: 7));
+  }
+}
+
+List<String> combineActivitiesFromMoodLogs(List<MoodLogRecord> moodLogs) {
+  final List<String> allActivities = [];
+
+  for (final moodLog in moodLogs) {
+    final activities = moodLog.activities;
+    if (activities != null && activities.isNotEmpty) {
+      allActivities.addAll(
+        activities.where((activity) => activity.trim().isNotEmpty),
+      );
+    }
+  }
+
+  return allActivities;
+}
+
+List<String>? countOccurrencesInActivityList() {
+  int countOccurrencesInActivityList(
+      List<String> actLogs, String targetActivity) {
+    return actLogs
+        .where((activity) =>
+            activity.trim().toLowerCase() ==
+            targetActivity.trim().toLowerCase())
+        .length;
+  }
+}
+
+List<double> countWeeklyMoods(List<MoodLogRecord> logs) {
+  final labels = ['sadness', 'joy', 'love', 'anger', 'fear', 'surprise'];
+  final counts = List<double>.filled(labels.length, 0.0);
+  final cutoff = DateTime.now().subtract(Duration(days: 7));
+
+  for (final rec in logs) {
+    if (rec.date != null && rec.date!.isAfter(cutoff)) {
+      final idx = labels.indexOf(rec.moodLabel ?? '');
+      if (idx >= 0) {
+        counts[idx] += 1;
+      }
+    }
+  }
+  return counts;
+}
+
+String? getDominantMood(List<double>? weeklyMoodCounts) {
+  if (weeklyMoodCounts == null || weeklyMoodCounts.isEmpty) return null;
+
+  // Mood labels corresponding to chart positions
+  final moodLabels = ['Sadness', 'Joy', 'Love', 'Anger', 'Fear', 'Surprise'];
+
+  // Find the index of the max value
+  int maxIndex = 0;
+  for (int i = 1; i < weeklyMoodCounts.length; i++) {
+    if (weeklyMoodCounts[i] > weeklyMoodCounts[maxIndex]) {
+      maxIndex = i;
+    }
+  }
+
+  return moodLabels[maxIndex];
+}
+
+DateTime getDateDaysAgo(int days) {
+  return DateTime.now().subtract(Duration(days: days));
 }

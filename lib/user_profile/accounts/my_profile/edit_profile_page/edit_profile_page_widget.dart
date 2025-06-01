@@ -9,6 +9,7 @@ import '/flutter_flow/upload_data.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'edit_profile_page_model.dart';
 export 'edit_profile_page_model.dart';
 
@@ -32,10 +33,12 @@ class _EditProfilePageWidgetState extends State<EditProfilePageWidget> {
     super.initState();
     _model = createModel(context, () => EditProfilePageModel());
 
-    _model.txtUNameTextController ??= TextEditingController();
+    _model.txtUNameTextController ??= TextEditingController(
+        text: valueOrDefault(currentUserDocument?.userName, ''));
     _model.txtUNameFocusNode ??= FocusNode();
 
-    _model.txtUBioTextController ??= TextEditingController();
+    _model.txtUBioTextController ??= TextEditingController(
+        text: valueOrDefault(currentUserDocument?.userBio, ''));
     _model.txtUBioFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -117,11 +120,19 @@ class _EditProfilePageWidgetState extends State<EditProfilePageWidget> {
                           'Edit Profile',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
+                                    font: GoogleFonts.inter(
+                                      fontWeight: FontWeight.bold,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
                                     color: FlutterFlowTheme.of(context).text1,
                                     fontSize: 24.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
                                   ),
                         ),
                       ]
@@ -181,7 +192,8 @@ class _EditProfilePageWidgetState extends State<EditProfilePageWidget> {
                                                 validateFileFormat(
                                                     m.storagePath, context))) {
                                           safeSetState(() =>
-                                              _model.isDataUploading = true);
+                                              _model.isDataUploading_userPhoto =
+                                                  true);
                                           var selectedUploadedFiles =
                                               <FFUploadedFile>[];
 
@@ -212,16 +224,17 @@ class _EditProfilePageWidgetState extends State<EditProfilePageWidget> {
                                                 .map((u) => u!)
                                                 .toList();
                                           } finally {
-                                            _model.isDataUploading = false;
+                                            _model.isDataUploading_userPhoto =
+                                                false;
                                           }
                                           if (selectedUploadedFiles.length ==
                                                   selectedMedia.length &&
                                               downloadUrls.length ==
                                                   selectedMedia.length) {
                                             safeSetState(() {
-                                              _model.uploadedLocalFile =
+                                              _model.uploadedLocalFile_userPhoto =
                                                   selectedUploadedFiles.first;
-                                              _model.uploadedFileUrl =
+                                              _model.uploadedFileUrl_userPhoto =
                                                   downloadUrls.first;
                                             });
                                           } else {
@@ -232,7 +245,8 @@ class _EditProfilePageWidgetState extends State<EditProfilePageWidget> {
 
                                         await currentUserReference!
                                             .update(createUsersRecordData(
-                                          photoUrl: _model.uploadedFileUrl,
+                                          photoUrl:
+                                              _model.uploadedFileUrl_userPhoto,
                                         ));
                                       },
                                     ),
@@ -260,11 +274,19 @@ class _EditProfilePageWidgetState extends State<EditProfilePageWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
-                                      fontFamily: 'Inter Tight',
+                                      font: GoogleFonts.interTight(
+                                        fontWeight: FontWeight.w500,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleMedium
+                                            .fontStyle,
+                                      ),
                                       color: FlutterFlowTheme.of(context).text1,
                                       fontSize: 16.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w500,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .fontStyle,
                                     ),
                               ),
                               AuthUserStreamWidget(
@@ -282,10 +304,27 @@ class _EditProfilePageWidgetState extends State<EditProfilePageWidget> {
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Inter',
+                                            font: GoogleFonts.inter(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
                                             color: FlutterFlowTheme.of(context)
                                                 .text2,
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontStyle,
                                           ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
@@ -327,10 +366,27 @@ class _EditProfilePageWidgetState extends State<EditProfilePageWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Inter',
+                                          font: GoogleFonts.inter(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
                                           color: FlutterFlowTheme.of(context)
                                               .text3,
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
                                         ),
                                     cursorColor: FlutterFlowTheme.of(context)
                                         .primaryText,
@@ -351,11 +407,19 @@ class _EditProfilePageWidgetState extends State<EditProfilePageWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
-                                      fontFamily: 'Inter Tight',
+                                      font: GoogleFonts.interTight(
+                                        fontWeight: FontWeight.w500,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleMedium
+                                            .fontStyle,
+                                      ),
                                       color: FlutterFlowTheme.of(context).text1,
                                       fontSize: 16.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w500,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleMedium
+                                          .fontStyle,
                                     ),
                               ),
                               AuthUserStreamWidget(
@@ -373,8 +437,25 @@ class _EditProfilePageWidgetState extends State<EditProfilePageWidget> {
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Inter',
+                                            font: GoogleFonts.inter(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .fontStyle,
+                                            ),
                                             letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .fontStyle,
                                           ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
@@ -416,10 +497,27 @@ class _EditProfilePageWidgetState extends State<EditProfilePageWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Inter',
+                                          font: GoogleFonts.inter(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                          ),
                                           color: FlutterFlowTheme.of(context)
                                               .text3,
                                           letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
                                           lineHeight: 1.0,
                                         ),
                                     maxLines: 6,
@@ -499,10 +597,18 @@ class _EditProfilePageWidgetState extends State<EditProfilePageWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Inter Tight',
+                                    font: GoogleFonts.interTight(
+                                      fontWeight: FontWeight.bold,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
+                                    ),
                                     color: FlutterFlowTheme.of(context).text4,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontStyle,
                                   ),
                               elevation: 0.0,
                               borderRadius: BorderRadius.circular(8.0),

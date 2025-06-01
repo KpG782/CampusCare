@@ -6,10 +6,10 @@ import 'package:flutter/material.dart';
 class EditProfilePageModel extends FlutterFlowModel<EditProfilePageWidget> {
   ///  State fields for stateful widgets in this page.
 
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
+  bool isDataUploading_userPhoto = false;
+  FFUploadedFile uploadedLocalFile_userPhoto =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl = '';
+  String uploadedFileUrl_userPhoto = '';
 
   // State field(s) for txtUName widget.
   FocusNode? txtUNameFocusNode;

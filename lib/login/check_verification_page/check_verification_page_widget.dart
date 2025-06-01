@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'check_verification_page_model.dart';
 export 'check_verification_page_model.dart';
 
@@ -85,8 +86,18 @@ class _CheckVerificationPageWidgetState
                 'Email Verification',
                 textAlign: TextAlign.center,
                 style: FlutterFlowTheme.of(context).displaySmall.override(
-                      fontFamily: 'Inter Tight',
+                      font: GoogleFonts.interTight(
+                        fontWeight: FlutterFlowTheme.of(context)
+                            .displaySmall
+                            .fontWeight,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).displaySmall.fontStyle,
+                      ),
                       letterSpacing: 0.0,
+                      fontWeight:
+                          FlutterFlowTheme.of(context).displaySmall.fontWeight,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).displaySmall.fontStyle,
                     ),
               ),
               Align(
@@ -98,8 +109,21 @@ class _CheckVerificationPageWidgetState
                     'We have sent a verification email to your account: ${currentUserEmail}',
                     textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).titleMedium.override(
-                          fontFamily: 'Inter Tight',
+                          font: GoogleFonts.interTight(
+                            fontWeight: FlutterFlowTheme.of(context)
+                                .titleMedium
+                                .fontWeight,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .titleMedium
+                                .fontStyle,
+                          ),
                           letterSpacing: 0.0,
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .titleMedium
+                              .fontWeight,
+                          fontStyle: FlutterFlowTheme.of(context)
+                              .titleMedium
+                              .fontStyle,
                         ),
                   ),
                 ),
@@ -133,8 +157,21 @@ class _CheckVerificationPageWidgetState
                         labelText: 'Email',
                         labelStyle:
                             FlutterFlowTheme.of(context).labelLarge.override(
-                                  fontFamily: 'Inter',
+                                  font: GoogleFonts.inter(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .fontStyle,
+                                  ),
                                   letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .labelLarge
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelLarge
+                                      .fontStyle,
                                 ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -169,9 +206,22 @@ class _CheckVerificationPageWidgetState
                             FlutterFlowTheme.of(context).primaryBackground,
                       ),
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
-                            fontFamily: 'Inter',
+                            font: GoogleFonts.inter(
+                              fontWeight: FlutterFlowTheme.of(context)
+                                  .bodyLarge
+                                  .fontWeight,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .bodyLarge
+                                  .fontStyle,
+                            ),
                             color: FlutterFlowTheme.of(context).primaryText,
                             letterSpacing: 0.0,
+                            fontWeight: FlutterFlowTheme.of(context)
+                                .bodyLarge
+                                .fontWeight,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .bodyLarge
+                                .fontStyle,
                           ),
                       keyboardType: TextInputType.emailAddress,
                       validator: _model.emailTextControllerValidator
@@ -196,10 +246,22 @@ class _CheckVerificationPageWidgetState
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: Color(0xFF19C5C5),
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Inter Tight',
+                          font: GoogleFonts.interTight(
+                            fontWeight: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .fontWeight,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .fontStyle,
+                          ),
                           color: Colors.white,
                           fontSize: 20.0,
                           letterSpacing: 0.0,
+                          fontWeight: FlutterFlowTheme.of(context)
+                              .titleSmall
+                              .fontWeight,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).titleSmall.fontStyle,
                         ),
                     elevation: 0.0,
                     borderRadius: BorderRadius.circular(24.0),
@@ -233,11 +295,18 @@ class _CheckVerificationPageWidgetState
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: Color(0xFFAEB0B0),
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Inter Tight',
+                          font: GoogleFonts.interTight(
+                            fontWeight: FontWeight.w600,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .fontStyle,
+                          ),
                           color: Colors.white,
                           fontSize: 20.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w600,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).titleSmall.fontStyle,
                         ),
                     elevation: 0.0,
                     borderRadius: BorderRadius.circular(24.0),
@@ -290,11 +359,18 @@ class _CheckVerificationPageWidgetState
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: Color(0xFFAEB0B0),
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Inter Tight',
+                          font: GoogleFonts.interTight(
+                            fontWeight: FontWeight.w600,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .fontStyle,
+                          ),
                           color: Colors.white,
                           fontSize: 20.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w600,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).titleSmall.fontStyle,
                         ),
                     elevation: 0.0,
                     borderRadius: BorderRadius.circular(24.0),

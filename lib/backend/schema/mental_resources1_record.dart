@@ -15,19 +15,49 @@ class MentalResources1Record extends FirestoreRecord {
     _initializeFields();
   }
 
-  // "posts" field.
-  String? _posts;
-  String get posts => _posts ?? '';
-  bool hasPosts() => _posts != null;
+  // "post_author" field.
+  String? _postAuthor;
+  String get postAuthor => _postAuthor ?? '';
+  bool hasPostAuthor() => _postAuthor != null;
 
-  // "description" field.
-  String? _description;
-  String get description => _description ?? '';
-  bool hasDescription() => _description != null;
+  // "post_author_description" field.
+  String? _postAuthorDescription;
+  String get postAuthorDescription => _postAuthorDescription ?? '';
+  bool hasPostAuthorDescription() => _postAuthorDescription != null;
+
+  // "post_body" field.
+  String? _postBody;
+  String get postBody => _postBody ?? '';
+  bool hasPostBody() => _postBody != null;
+
+  // "post_category" field.
+  String? _postCategory;
+  String get postCategory => _postCategory ?? '';
+  bool hasPostCategory() => _postCategory != null;
+
+  // "post_id" field.
+  int? _postId;
+  int get postId => _postId ?? 0;
+  bool hasPostId() => _postId != null;
+
+  // "post_title" field.
+  String? _postTitle;
+  String get postTitle => _postTitle ?? '';
+  bool hasPostTitle() => _postTitle != null;
+
+  // "post_video" field.
+  String? _postVideo;
+  String get postVideo => _postVideo ?? '';
+  bool hasPostVideo() => _postVideo != null;
 
   void _initializeFields() {
-    _posts = snapshotData['posts'] as String?;
-    _description = snapshotData['description'] as String?;
+    _postAuthor = snapshotData['post_author'] as String?;
+    _postAuthorDescription = snapshotData['post_author_description'] as String?;
+    _postBody = snapshotData['post_body'] as String?;
+    _postCategory = snapshotData['post_category'] as String?;
+    _postId = castToType<int>(snapshotData['post_id']);
+    _postTitle = snapshotData['post_title'] as String?;
+    _postVideo = snapshotData['post_video'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -66,13 +96,23 @@ class MentalResources1Record extends FirestoreRecord {
 }
 
 Map<String, dynamic> createMentalResources1RecordData({
-  String? posts,
-  String? description,
+  String? postAuthor,
+  String? postAuthorDescription,
+  String? postBody,
+  String? postCategory,
+  int? postId,
+  String? postTitle,
+  String? postVideo,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
-      'posts': posts,
-      'description': description,
+      'post_author': postAuthor,
+      'post_author_description': postAuthorDescription,
+      'post_body': postBody,
+      'post_category': postCategory,
+      'post_id': postId,
+      'post_title': postTitle,
+      'post_video': postVideo,
     }.withoutNulls,
   );
 
@@ -85,12 +125,25 @@ class MentalResources1RecordDocumentEquality
 
   @override
   bool equals(MentalResources1Record? e1, MentalResources1Record? e2) {
-    return e1?.posts == e2?.posts && e1?.description == e2?.description;
+    return e1?.postAuthor == e2?.postAuthor &&
+        e1?.postAuthorDescription == e2?.postAuthorDescription &&
+        e1?.postBody == e2?.postBody &&
+        e1?.postCategory == e2?.postCategory &&
+        e1?.postId == e2?.postId &&
+        e1?.postTitle == e2?.postTitle &&
+        e1?.postVideo == e2?.postVideo;
   }
 
   @override
-  int hash(MentalResources1Record? e) =>
-      const ListEquality().hash([e?.posts, e?.description]);
+  int hash(MentalResources1Record? e) => const ListEquality().hash([
+        e?.postAuthor,
+        e?.postAuthorDescription,
+        e?.postBody,
+        e?.postCategory,
+        e?.postId,
+        e?.postTitle,
+        e?.postVideo
+      ]);
 
   @override
   bool isValidKey(Object? o) => o is MentalResources1Record;
