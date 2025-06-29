@@ -34,6 +34,8 @@ CampusCare leverages artificial intelligence to enhance student well-being. We h
   Access articles, videos, and exercises on stress, study skills, and personal growth.
 - **Real-Time Messaging**  
   Chat securely with certified counselors for guidance and support.
+- **Dark Mode Support**  
+  Enjoy a beautiful, eye-friendly interface with full dark mode support for comfortable use day or night.
 
 ### Admin & Counselor Tools
 
@@ -43,6 +45,8 @@ CampusCare leverages artificial intelligence to enhance student well-being. We h
   Approve, reschedule, or cancel appointments instantly.
 - **Content Management**  
   Publish and update articles, events, and announcements.
+- **Dark Mode Support**  
+  Enjoy a beautiful, eye-friendly interface with full dark mode support for comfortable use day or night.
 - **Analytics & Reports**  
   Visual dashboards for mood trends, appointments, and engagement metrics.
 
@@ -77,7 +81,23 @@ FlutterFlow + Flutter (Dart) + Firebase + AI (DistilBERT)
 
 ## 🖼️ Screenshots
 
-> _Add your screenshots to `assets/screenshots/` and showcase the app here!_
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e5ad238c-7410-4866-ba84-26963efac6aa" width="200" />
+  <img src="https://github.com/user-attachments/assets/7b3e3345-e126-4b46-9ed3-55436770765d" width="200" />
+  <img src="https://github.com/user-attachments/assets/9283d668-cc45-41de-a54f-4a06a83f1f7a" width="200" />
+  <img src="https://github.com/user-attachments/assets/fe72d630-9fdf-4bca-92e2-a05deed3e08b" width="200" />
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/3b45c750-0b2d-40b6-8d5e-5d0d5f416079" width="200" />
+  <img src="https://github.com/user-attachments/assets/9efc88f1-58a3-4696-852c-72acf912ae98" width="200" />
+  <img src="https://github.com/user-attachments/assets/77dda2fc-3db7-4bb6-82e7-1b643be1892a" width="200" />
+  <img src="https://github.com/user-attachments/assets/5f5a6c82-9d4a-4e8a-811f-4d22a7b3651a" width="200" />
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a8a75a75-c0eb-4b71-b4f6-35617a0a2629" width="200" />
+</p>
+
+
 
 ---
 
