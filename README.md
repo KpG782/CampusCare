@@ -2,7 +2,7 @@
 
 > **Empowering Student Well-being at University of Makati**
 
-CampusCare is a beautifully designed, FlutterFlow-powered mobile guidance counseling app, crafted to provide accessible, on-demand mental health and counseling support for students of the University of Makati (UMak). Developed in partnership with the UMak Counseling and Guidance Center Services (CGCS), CampusCare blends modern UI/UX with robust Flutter & Dart engineering to deliver a seamless, secure, and supportive experience for every student.
+A beautifully crafted, AI-powered mobile guidance counseling app for University of Makati students—designed with FlutterFlow and Flutter. CampusCare combines secure mood tracking, instant AI-driven emotional insights, real-time counseling, and a rich library of self-help resources in a stunning, intuitive interface. Experience next-generation student well-being with seamless dark mode, smart analytics, and a caring digital companion—right in your pocket.
 
 ---
 
