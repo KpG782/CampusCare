@@ -177,3 +177,9 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ---
 
 > _CampusCare: Designed with FlutterFlow. Engineered with Flutter & Dart. Enhanced by AI. Dedicated to student well-being._
+
+---
+
+> **Notice:**
+> Some features or integrations in this application may become deprecated or non-functional over time due to updates or changes in third-party services, APIs, or technology stacks (such as Flutter, Firebase, or AI libraries). Maintenance and updates may be limited if subscriptions or support for these services expire. For the latest compatibility, please refer to the official documentation of each technology used.
+
