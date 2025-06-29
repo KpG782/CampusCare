@@ -6,6 +6,17 @@ A beautifully crafted, AI-powered mobile guidance counseling app for University 
 
 ---
 
+## 🚀 Test the App (Demo Account)
+
+Want to explore CampusCare? Try logging in with our demo account:
+
+- **Email:** lcorpuz.a12241569@umak.edu.ph
+- **Password:** 123BOIAmats!
+
+Feel free to navigate, test features, and experience the app as a student user!
+
+---
+
 ## 🤖 AI-Powered Mood Insights
 
 CampusCare leverages artificial intelligence to enhance student well-being. We have integrated a custom-trained DistilBERT model for mood summary and emotion classification, enabling:
