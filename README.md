@@ -169,10 +169,10 @@ https://www.figma.com/design/uL8ySg520S6FQFeV7KKNOr/GUIDANCE-COUNSELING-APP?node
 
 | Name            | Role                                |
 | --------------- | ----------------------------------- |
-| Ken Garcia      | Project Leader & Content Strategist |
+| Ken Garcia      | Project Leader & Full Stack Dev     |
 | Mars Maguddayao | Researcher                          |
-| Timothy Forte   | Frontend Designer & Developer       |
-| Lanz Corpuz     | Backend Developer                   |
+| Timothy Forte   | Frontend Designer                   |
+| Lanz Corpuz     | Frontend/Backend Developer          |
 | Brian Ashley    | QA Tester & Documentation           |
 
 ---
