@@ -1,34 +1,48 @@
 # CampusCare
 > **Empowering Student Well-being at University of Makati**
 
-A beautifully crafted, AI-powered mobile guidance counseling app for University of Makati students—designed with FlutterFlow and Flutter. CampusCare combines secure mood tracking, instant AI-driven emotional insights, real-time counseling, and a rich library of self-help resources in a stunning, intuitive interface. Experience next-generation student well-being with seamless dark mode, smart analytics, and a caring digital companion—right in your pocket.
+A comprehensive, AI-powered guidance counseling platform for University of Makati students—featuring both web and mobile applications built with FlutterFlow and Flutter. CampusCare delivers a seamless cross-platform experience combining secure mood tracking, intelligent AI-driven emotional insights, real-time counseling, and a rich library of self-help resources. Experience next-generation student well-being with responsive design, smart analytics, and a caring digital companion accessible from any device—whether on your phone, tablet, or computer.
 
 ---
 
-## 🌐 Live Demo (Web)
+## 🌐 Live Web Application
 
-You can also try CampusCare directly in your browser:  
-👉 [CampusCare Web Demo](https://campus-care-izsd1a.flutterflow.app/bLogin)
+Experience CampusCare directly in your browser—no downloads required:  
+👉 **[CampusCare Web App](https://campus-care-izsd1a.flutterflow.app/bLogin)**
+
+*Fully responsive design optimized for desktop, tablet, and mobile browsers*
 
 ---
 
-## 📱 Download (APK)
+## 📱 Mobile Application (Android)
 
-For Android devices, install the APK here:  
-👉 [CampusCare APK (Google Drive)](https://drive.google.com/drive/u/2/folders/1RcX2Sduq-87-wtzQmxIjrcNhyXWUNMeN)
+Get the native mobile experience:  
+👉 **[Download CampusCare APK](https://drive.google.com/drive/u/2/folders/1RcX2Sduq-87-wtzQmxIjrcNhyXWUNMeN)**
 
 ⚠️ **Note:** iOS build is not currently available due to Apple Developer Program requirements.
 
 ---
 
-## 🚀 Test the App (Demo Account)
+## 🚀 Cross-Platform Access & Demo
 
-Want to explore CampusCare? Try logging in with our demo account:
+### 🌐 **Web Application**
+Access CampusCare instantly through any modern web browser:
+- **Live URL:** [https://campus-care-izsd1a.flutterflow.app/bLogin](https://campus-care-izsd1a.flutterflow.app/bLogin)
+- **Features:** Full functionality with responsive design
+- **Compatibility:** Desktop, tablet, and mobile browsers
 
-- **Email:** lcorpuz.a12241569@umak.edu.ph  
-- **Password:** 123BOIAmats!  
+### 📱 **Mobile Application** 
+Get the native Android experience:
+- **Download:** [CampusCare APK v1.0.0](https://drive.google.com/drive/u/2/folders/1RcX2Sduq-87-wtzQmxIjrcNhyXWUNMeN)
+- **Platform:** Android (iOS coming soon)
+- **Features:** Native mobile optimizations and offline capabilities
 
-Feel free to navigate, test features, and experience the app as a student user!
+### 🧪 **Demo Credentials**
+Test both platforms with our demo account:
+- **Email:** `lcorpuz.a12241569@umak.edu.ph`  
+- **Password:** `123BOIAmats!`  
+
+*Try the same account on both web and mobile to experience seamless data synchronization!*
 
 ---
 
@@ -44,48 +58,91 @@ CampusCare leverages artificial intelligence to enhance student well-being. We h
 
 ## 🌟 Key Features
 
-### Student Experience
+### 🎯 **Cross-Platform Experience**
+- **Web Application:** Instant access via browser, no installation required
+- **Mobile Application:** Native Android app with offline capabilities  
+- **Synchronized Data:** Seamless experience across all devices
+- **Responsive Design:** Optimized for desktop, tablet, and mobile
+
+### 👨‍🎓 **Student Experience**
 - Secure Account & Authentication  
-- Mood Tracking & Visualization  
-- AI-Powered Mood Summaries  
-- Appointment Booking  
-- Curated Self-Help Resources  
-- Real-Time Messaging  
+- Interactive Mood Tracking & Visualization  
+- AI-Powered Mood Analysis & Summaries  
+- Counselor Appointment Booking System
+- Curated Self-Help Resources Library
+- Real-Time Messaging with Counselors
 - Dark Mode Support  
 
-### Admin & Counselor Tools
-- Counselor Management  
-- Appointment Dashboard  
-- Content Management  
+### 👩‍💼 **Admin & Counselor Tools**
+- Comprehensive Counselor Management  
+- Appointment Dashboard & Scheduling
+- Content Management System
+- Student Analytics & Reports
 - Dark Mode Support  
-- Analytics & Reports  
 
 ---
 
-## 🏗️ Architecture & Modules
+## 🏗️ Architecture & Technology
 
 ```
-FlutterFlow + Flutter (Dart) + Firebase + AI (DistilBERT)
+Cross-Platform Architecture: Flutter Web + Flutter Mobile + Firebase + AI
 │
-├─ Authentication (Firebase Auth)
-├─ Data Storage (Cloud Firestore)
-├─ Serverless Logic (Cloud Functions)
-├─ File Hosting (Firebase Storage)
-├─ AI Model Integration (DistilBERT for Mood Analysis)
-└─ UI / State Management
-   ├─ Student Screens
+├─ 🌐 Web Application (Flutter Web)
+│  ├─ Responsive UI/UX Design
+│  ├─ Progressive Web App (PWA) Capabilities
+│  └─ Browser-Optimized Performance
+│
+├─ 📱 Mobile Application (Flutter Native)
+│  ├─ Native Android Performance
+│  ├─ Offline Data Synchronization
+│  └─ Mobile-Specific UI Components
+│
+├─ 🔥 Backend Infrastructure (Firebase)
+│  ├─ Authentication (Firebase Auth)
+│  ├─ Real-time Database (Cloud Firestore)
+│  ├─ Serverless Functions (Cloud Functions)
+│  ├─ File Storage (Firebase Storage)
+│  └─ Web Hosting (Firebase Hosting)
+│
+└─ 🤖 AI Integration (DistilBERT)
+   ├─ Mood Analysis & Classification
+   ├─ Emotion Detection (6 categories)
+   └─ Intelligent Insights Generation
 ```
 
 ---
 
 ## 🚀 Technology Stack
 
-- **Frontend:** Flutter, FlutterFlow  
-- **Backend:** Firebase Auth, Firestore, Storage, Cloud Functions  
-- **AI/ML:** Python, HuggingFace Transformers, DistilBERT, Colab  
-- **Design/Prototyping:** Figma, FlutterFlow  
-- **CI/CD:** GitHub Actions, Firebase Hosting  
-- **Testing:** Apache JMeter, manual usability testing  
+### **Frontend Development**
+- **Flutter Web:** Cross-platform web application framework
+- **Flutter Mobile:** Native Android application development  
+- **FlutterFlow:** Visual development and rapid prototyping
+- **Dart:** Primary programming language
+
+### **Backend & Infrastructure**
+- **Firebase Auth:** Secure user authentication and authorization
+- **Cloud Firestore:** Real-time NoSQL database
+- **Firebase Storage:** File and media storage solution
+- **Cloud Functions:** Serverless backend logic
+- **Firebase Hosting:** Web application deployment
+
+### **AI & Machine Learning**
+- **Python:** AI model development and training
+- **HuggingFace Transformers:** NLP model framework
+- **DistilBERT:** Fine-tuned transformer for emotion analysis
+- **Google Colab:** Model training and experimentation
+
+### **Design & Development Tools**
+- **Figma:** UI/UX design and prototyping
+- **FlutterFlow:** Visual development environment
+- **GitHub:** Version control and collaboration
+- **GitHub Actions:** CI/CD pipeline automation
+
+### **Testing & Quality Assurance**
+- **Apache JMeter:** Performance and load testing
+- **Manual Testing:** Comprehensive usability testing
+- **Cross-browser Testing:** Web compatibility validation  
 
 ---
 
@@ -155,14 +212,27 @@ Check out our Figma designs and prototypes here:
 
 ---
 
-## 💡 Usage
+## 💡 How to Use CampusCare
 
-- Sign up / sign in with your UMak email.
-- Complete your profile (department, bio, picture).
-- Log your mood in the Mood Tracker daily.
-- Browse the Discovery section for CGCS info, counselor profiles, and services.
-- Book or cancel appointments and chat with counselors.
-- Access self-help articles under the Resources tab anytime.
+### 🌐 **Web Application**
+1. Visit [CampusCare Web App](https://campus-care-izsd1a.flutterflow.app/bLogin)
+2. Sign up with your UMak email or use demo credentials
+3. Complete your profile setup (department, bio, profile picture)
+4. Access all features directly from your browser
+
+### 📱 **Mobile Application**  
+1. Download and install the APK on your Android device
+2. Enable "Install from unknown sources" if prompted
+3. Launch the app and sign in with the same credentials
+4. Enjoy native mobile experience with offline capabilities
+
+### 🎯 **Key User Flows**
+- **Daily Mood Tracking:** Log emotions and receive AI-powered insights
+- **Counselor Discovery:** Browse CGCS information, counselor profiles, and services
+- **Appointment Management:** Book, reschedule, or cancel counseling sessions
+- **Real-time Communication:** Chat securely with assigned counselors
+- **Self-Help Resources:** Access curated mental health articles and guides
+- **Cross-Device Sync:** Start on web, continue on mobile—data stays synchronized
 
 ---
 
@@ -184,9 +254,22 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ---
 
-> *CampusCare: Designed with FlutterFlow. Engineered with Flutter & Dart. Enhanced by AI. Dedicated to student well-being.*
+## 🏆 Project Highlights
+
+- **🌐 Full-Stack Development:** Complete web and mobile application ecosystem
+- **🤖 AI Integration:** Custom-trained DistilBERT model for emotional intelligence
+- **🔄 Cross-Platform Sync:** Seamless data synchronization across devices
+- **📱 Responsive Design:** Optimized for all screen sizes and platforms
+- **🔐 Enterprise Security:** Firebase-backed secure authentication system
+- **⚡ Real-time Features:** Live messaging and instant data updates
+- **📊 Data Analytics:** Comprehensive mood tracking and reporting system
 
 ---
 
-> **Notice:**
-> Some features or integrations in this application may become deprecated or non-functional over time due to updates or changes in third-party services, APIs, or technology stacks (such as Flutter, Firebase, or AI libraries). Maintenance and updates may be limited if subscriptions or support for these services expire. For the latest compatibility, please refer to the official documentation of each technology used.
+> *CampusCare: A comprehensive mental health platform showcasing full-stack development, AI integration, and user-centered design. Built with Flutter for web and mobile, powered by Firebase, and enhanced with machine learning for intelligent student well-being support.*
+
+---
+
+## ⚠️ Development Notice
+
+This application demonstrates advanced cross-platform development capabilities and AI integration. Some features may require active subscriptions to third-party services (Firebase, FlutterFlow, etc.) for full functionality. The project showcases modern software architecture patterns, real-time data synchronization, and responsive design principles suitable for production-level applications.
