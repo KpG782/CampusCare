@@ -1,8 +1,23 @@
 # CampusCare
-
 > **Empowering Student Well-being at University of Makati**
 
 A beautifully crafted, AI-powered mobile guidance counseling app for University of Makati students—designed with FlutterFlow and Flutter. CampusCare combines secure mood tracking, instant AI-driven emotional insights, real-time counseling, and a rich library of self-help resources in a stunning, intuitive interface. Experience next-generation student well-being with seamless dark mode, smart analytics, and a caring digital companion—right in your pocket.
+
+---
+
+## 🌐 Live Demo (Web)
+
+You can also try CampusCare directly in your browser:  
+👉 [CampusCare Web Demo](https://campus-care-izsd1a.flutterflow.app/bLogin)
+
+---
+
+## 📱 Download (APK)
+
+For Android devices, install the APK here:  
+👉 [CampusCare APK (Google Drive)](https://drive.google.com/drive/u/2/folders/1RcX2Sduq-87-wtzQmxIjrcNhyXWUNMeN)
+
+⚠️ **Note:** iOS build is not currently available due to Apple Developer Program requirements.
 
 ---
 
@@ -10,8 +25,8 @@ A beautifully crafted, AI-powered mobile guidance counseling app for University 
 
 Want to explore CampusCare? Try logging in with our demo account:
 
-- **Email:** lcorpuz.a12241569@umak.edu.ph
-- **Password:** 123BOIAmats!
+- **Email:** lcorpuz.a12241569@umak.edu.ph  
+- **Password:** 123BOIAmats!  
 
 Feel free to navigate, test features, and experience the app as a student user!
 
@@ -21,43 +36,29 @@ Feel free to navigate, test features, and experience the app as a student user!
 
 CampusCare leverages artificial intelligence to enhance student well-being. We have integrated a custom-trained DistilBERT model for mood summary and emotion classification, enabling:
 
-- **Automated Mood Analysis:** Student mood logs are analyzed using a fine-tuned DistilBERT transformer, providing instant, intelligent feedback and summaries.
-- **Emotion Detection:** The AI can classify emotions such as sadness, joy, love, anger, fear, and surprise, helping counselors and students better understand emotional trends.
-- **Custom Model Training:** Our model was trained using the HuggingFace Transformers library and the [Fine-Tuning DistilBERT notebook](https://colab.research.google.com/drive/1g2-SgXIYfRwKsJXKmF87VHoONTWupvHs?authuser=2#scrollTo=OCHRSKdJPqwK), ensuring high accuracy and relevance for student mental health data.
+- **Automated Mood Analysis:** Student mood logs are analyzed using a fine-tuned DistilBERT transformer, providing instant, intelligent feedback and summaries.  
+- **Emotion Detection:** The AI can classify emotions such as sadness, joy, love, anger, fear, and surprise, helping counselors and students better understand emotional trends.  
+- **Custom Model Training:** Our model was trained using the HuggingFace Transformers library and the [Fine-Tuning DistilBERT notebook](https://colab.research.google.com/drive/1g2-SgXIYfRwKsJXKmF87VHoONTWupvHs?authuser=2#scrollTo=OCHRSKdJPqwK), ensuring high accuracy and relevance for student mental health data.  
 
 ---
 
 ## 🌟 Key Features
 
 ### Student Experience
-
-- **Secure Account & Authentication**  
-  Sign in with your UMak email, manage your profile, and enjoy a safe, private environment.
-- **Mood Tracking & Visualization**  
-  Log your daily mood, reflect with interactive charts, and monitor your emotional journey.
-- **AI-Powered Mood Summaries**  
-  Receive instant, AI-generated insights and summaries of your mood logs.
-- **Appointment Booking**  
-  Browse counselor profiles, check real-time availability, and book or manage sessions with ease.
-- **Curated Self-Help Resources**  
-  Access articles, videos, and exercises on stress, study skills, and personal growth.
-- **Real-Time Messaging**  
-  Chat securely with certified counselors for guidance and support.
-- **Dark Mode Support**  
-  Enjoy a beautiful, eye-friendly interface with full dark mode support for comfortable use day or night.
+- Secure Account & Authentication  
+- Mood Tracking & Visualization  
+- AI-Powered Mood Summaries  
+- Appointment Booking  
+- Curated Self-Help Resources  
+- Real-Time Messaging  
+- Dark Mode Support  
 
 ### Admin & Counselor Tools
-
-- **Counselor Management**  
-  Create, update, or remove counselor profiles, schedules, and specializations.
-- **Appointment Dashboard**  
-  Approve, reschedule, or cancel appointments instantly.
-- **Content Management**  
-  Publish and update articles, events, and announcements.
-- **Dark Mode Support**  
-  Enjoy a beautiful, eye-friendly interface with full dark mode support for comfortable use day or night.
-- **Analytics & Reports**  
-  Visual dashboards for mood trends, appointments, and engagement metrics.
+- Counselor Management  
+- Appointment Dashboard  
+- Content Management  
+- Dark Mode Support  
+- Analytics & Reports  
 
 ---
 
@@ -79,12 +80,12 @@ FlutterFlow + Flutter (Dart) + Firebase + AI (DistilBERT)
 
 ## 🚀 Technology Stack
 
-- **Frontend:** Flutter, FlutterFlow
-- **Backend:** Firebase Auth, Firestore, Storage, Cloud Functions
-- **AI/ML:** Python, HuggingFace Transformers, DistilBERT, Colab
-- **Design/Prototyping:** Figma, FlutterFlow
-- **CI/CD:** GitHub Actions, Firebase Hosting
-- **Testing:** Apache JMeter, manual usability testing
+- **Frontend:** Flutter, FlutterFlow  
+- **Backend:** Firebase Auth, Firestore, Storage, Cloud Functions  
+- **AI/ML:** Python, HuggingFace Transformers, DistilBERT, Colab  
+- **Design/Prototyping:** Figma, FlutterFlow  
+- **CI/CD:** GitHub Actions, Firebase Hosting  
+- **Testing:** Apache JMeter, manual usability testing  
 
 ---
 
@@ -106,36 +107,34 @@ FlutterFlow + Flutter (Dart) + Firebase + AI (DistilBERT)
   <img src="https://github.com/user-attachments/assets/a8a75a75-c0eb-4b71-b4f6-35617a0a2629" width="200" />
 </p>
 
-
-
 ---
 
 ## 🎨 Design & Prototypes
 
 Check out our Figma designs and prototypes here:  
-https://www.figma.com/design/uL8ySg520S6FQFeV7KKNOr/GUIDANCE-COUNSELING-APP?node-id=378-471
+👉 [CampusCare Figma Design](https://www.figma.com/design/uL8ySg520S6FQFeV7KKNOr/GUIDANCE-COUNSELING-APP?node-id=378-471)
 
 ---
 
 ## 🛠️ Getting Started
 
 ### Prerequisites
-
-- Flutter SDK ≥ 3.x
-- FlutterFlow account
-- Firebase project (Auth, Firestore, Storage enabled)
-- IDE: Android Studio, VS Code, or IntelliJ IDEA
+- Flutter SDK ≥ 3.x  
+- FlutterFlow account  
+- Firebase project (Auth, Firestore, Storage enabled)  
+- IDE: Android Studio, VS Code, or IntelliJ IDEA  
 
 ### Installation
-
 1. **Clone the repo**
    ```bash
    git clone https://github.com/YourOrg/CampusCare.git
    cd CampusCare
    ```
+
 2. **Add Firebase config**
    - Copy `google-services.json` → `android/app/`
    - Copy `GoogleService-Info.plist` → `ios/Runner/`
+
 3. **Install dependencies**
    ```bash
    flutter pub get
@@ -147,10 +146,12 @@ https://www.figma.com/design/uL8ySg520S6FQFeV7KKNOr/GUIDANCE-COUNSELING-APP?node
   ```bash
   flutter run -d emulator-5554
   ```
+
 - **iOS:**
   ```bash
   flutter run -d <your-ios-device>
   ```
+  *(iOS build not deployed due to Apple Developer Program limitations)*
 
 ---
 
@@ -167,13 +168,13 @@ https://www.figma.com/design/uL8ySg520S6FQFeV7KKNOr/GUIDANCE-COUNSELING-APP?node
 
 ## 👥 Project Team
 
-| Name            | Role                                |
-| --------------- | ----------------------------------- |
-| Ken Garcia      | Project Leader & Full Stack Dev     |
-| Mars Maguddayao | Researcher                          |
-| Timothy Forte   | Frontend Designer                   |
-| Lanz Corpuz     | Frontend/Backend Developer          |
-| Brian Ashley    | QA Tester & Documentation           |
+| Name            | Role                            |
+| --------------- | ------------------------------- |
+| Ken Garcia      | Project Leader & Full Stack Dev |
+| Mars Maguddayao | Researcher                      |
+| Timothy Forte   | Frontend Designer               |
+| Lanz Corpuz     | Frontend/Backend Developer      |
+| Brian Ashley    | QA Tester & Documentation       |
 
 ---
 
@@ -183,10 +184,9 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ---
 
-> _CampusCare: Designed with FlutterFlow. Engineered with Flutter & Dart. Enhanced by AI. Dedicated to student well-being._
+> *CampusCare: Designed with FlutterFlow. Engineered with Flutter & Dart. Enhanced by AI. Dedicated to student well-being.*
 
 ---
 
 > **Notice:**
 > Some features or integrations in this application may become deprecated or non-functional over time due to updates or changes in third-party services, APIs, or technology stacks (such as Flutter, Firebase, or AI libraries). Maintenance and updates may be limited if subscriptions or support for these services expire. For the latest compatibility, please refer to the official documentation of each technology used.
-
